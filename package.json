@@ -1,0 +1,19 @@
+{
+  "name": "wyvern",
+  "version": "1.0.0",
+  "description": "Wyvern uses the Hypixel API to automatically party users with Mvp++ Accounts for tournaments, manage complex economy systems within Discord, and create automated Bedwars tournaments in Minecraft! It allows for organized tournaments to occur on a daily basis, rewarding winners, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Necione/wyvern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Necione/wyvern/issues"
+  },
+  "homepage": "https://github.com/Necione/wyvern#readme"
+}

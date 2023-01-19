@@ -1,62 +1,45 @@
-const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const config = require('./config/config');
-const colors = require("colors");
-
-// Creating a new client:
+const {
+  Client,
+  GatewayIntentBits,
+  Events,
+  Collection,
+  MessageEmbed,
+} = require("discord.js");
+const fs = require("fs");
+const path = require("path");
 const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.GuildPresences,
-    GatewayIntentBits.GuildMessageReactions,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.MessageContent
-  ],
-  partials: [
-    Partials.Channel,
-    Partials.Message,
-    Partials.User,
-    Partials.GuildMember,
-    Partials.Reaction
-  ],
-  presence: {
-    activities: [{
-      name: "over Wyvern",
-      type: 0
-    }],
-    status: 'idle'
+  intents: [GatewayIntentBits.Guilds],
+});
+
+const { token } = require("./config.json");
+
+client.once(Events.ClientReady, (c) => {
+  console.log(`Ready! Logged in as ${c.user.tag}`);
+});
+
+client.commands = new Collection();
+
+const commandsPath = path.join(__dirname, "commands");
+const commandFiles = fs
+  .readdirSync(commandsPath)
+  .filter((file) => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+  const filePath = path.join(commandsPath, file);
+  const command = require(filePath);
+  // Set a new item in the Collection with the key as the command name and the value as the exported module
+  if ("data" in command && "execute" in command) {
+    client.commands.set(command.data.name, command);
+  } else {
+    console.log(
+      `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
+    );
   }
+}
+
+client.on(Events.InteractionCreate, (interaction) => {
+  if (!interaction.isChatInputCommand()) return;
+  console.log(interaction);
 });
 
-// Hosting the bot:
-require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
-
-// Getting the bot token:
-const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
-
-// Handler:
-client.prefix_commands = new Collection();
-client.slash_commands = new Collection();
-client.user_commands = new Collection();
-client.message_commands = new Collection();
-client.modals = new Collection();
-client.events = new Collection();
-
-module.exports = client;
-
-["prefix", "application_commands", "modals", "events", "mongoose"].forEach((file) => {
-  require(`./handlers/${file}`)(client, config);
-});
-
-// Login to the bot:
-client.login(AuthenticationToken)
-  .catch((err) => {
-    console.error(err);
-    return process.exit();
-  });
-
-// Handle errors:
-process.on('unhandledRejection', async (err, promise) => {
-  console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
-  console.error(promise);
-});
+client.login(token);
