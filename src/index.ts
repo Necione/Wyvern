@@ -6,7 +6,7 @@ import path from "path";
 import { CommandError, CommandManager } from "@jiman24/slash-commandment";
 import { EmbedBuilder } from "@discordjs/builders";
 import { handleCommandError, RED, WARNING } from "./constants";
-import { Guild, Role, TextChannel } from "discord.js";
+import { TextChannel } from "discord.js";
 import { Battle } from "./structure/Battle";
 
 export const client = new Client({ 
