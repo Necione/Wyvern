@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rock",
+    "name": "Rock",
+    "price": 0,
+    "desc": "Just a simple, sharp rock.",
+    "hidden": true
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "price": 30,
+    "desc": "A strange, red rock...",
+    "hidden": true
+  },
+  {
+    "id": "snake_hide",
+    "name": "Snake Hide",
+    "price": 10,
+    "desc": "Tough!",
+    "hidden": true
+  },
+  {
+    "id": "scorpion_arm",
+    "name": "Scorpion Arm",
+    "price": 20,
+    "desc": "Crab arm lmao",
+    "hidden": true
+  },
+  {
+    "id": "scale",
+    "name": "Scale",
+    "price": 25,
+    "desc": "It looks pretty weird.",
+    "hidden": true
+  },
+  {
+    "id": "crawler_heart",
+    "name": "Crawler Heart",
+    "price": 10,
+    "desc": "It's still beating...",
+    "hidden": true
+  },
+  {
+    "id": "huge_eye",
+    "name": "Huge Eye",
+    "price": 0,
+    "desc": "It's staring right at you...",
+    "hidden": true
+  },
+  {
+    "id": "hydra_heart",
+    "name": "Hydra Heart",
+    "price": 30,
+    "desc": "Squishy.",
+    "hidden": true
+  }
+]

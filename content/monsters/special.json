@@ -1,0 +1,77 @@
+[
+  {
+    "id": "leviathan",
+    "name": "Leviathan",
+    "desc": "The name makes it sound like it flies.",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 1,
+    "hp": 20,
+    "defence": 10,
+    "defenceChance": 1,
+    "minAtk": 5,
+    "maxAtk": 8,
+    "minXp": 3,
+    "maxXp": 8,
+    "missChance": 0.15,
+    "playerMissChance": 0.35,
+    "fleeChance": 0,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "huge_eye",
+        "amount": 1,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      },
+      {
+        "id": "crystal",
+        "amount": 1,
+        "dropChance": 0.7
+      }
+    ]
+  },
+  {
+    "id": "falcon",
+    "name": "Falcon",
+    "desc": "A sharpshooter",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 1,
+    "hp": 30,
+    "defence": 8,
+    "defenceChance": 1,
+    "minAtk": 3,
+    "maxAtk": 9,
+    "minXp": 3,
+    "maxXp": 8,
+    "missChance": 0,
+    "playerMissChance": 0.35,
+    "fleeChance": 0,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "bone",
+        "amount": 1,
+        "dropChance": 0.8
+      },
+      {
+        "id": "ruby",
+        "amount": 1,
+        "dropChance": 0.3
+      },
+      {
+        "id": "crystal",
+        "amount": 1,
+        "dropChance": 0.7
+      },
+      {
+        "id": "scale",
+        "amount": 1,
+        "dropChance": 0.7
+      }
+    ]
+  }
+]

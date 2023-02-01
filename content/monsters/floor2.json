@@ -1,0 +1,290 @@
+[
+  {
+    "id": "super_slime",
+    "name": "Super Slime",
+    "desc": "Yuck.",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 1,
+    "hp": 50,
+    "defence": 8,
+    "defenceChance": 0.15,
+    "minAtk": 2,
+    "maxAtk": 8,
+    "minXp": 2,
+    "maxXp": 8,
+    "missChance": 0.15,
+    "playerMissChance": 0.1,
+    "fleeChance": 0.25,
+    "coins": 5,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 1,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      },
+      {
+        "id": "crystal",
+        "amount": 1,
+        "dropChance": 0.75
+      }
+    ]
+  },
+  {
+    "id": "greater_sandworm",
+    "name": "Greater Sandworm",
+    "desc": "Just a worm that likes to dig in the sand!",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 1,
+    "hp": 57,
+    "defence": 10,
+    "defenceChance": 0.25,
+    "minAtk": 3,
+    "maxAtk": 7,
+    "minXp": 1,
+    "maxXp": 5,
+    "missChance": 0.15,
+    "playerMissChance": 0.15,
+    "fleeChance": 0.25,
+    "coins": 5,
+    "drop": [
+      {
+        "id": "crystal",
+        "amount": 1,
+        "dropChance": 0.5
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      },
+      {
+        "id": "string",
+        "amount": 1,
+        "dropChance": 0.5
+      },
+      {
+        "id": "sharp_tooth",
+        "amount": 1,
+        "dropChance": 0.35
+      },
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.9
+      }
+    ]
+  },
+  {
+    "id": "yeti",
+    "name": "Yeti",
+    "desc": "Where did this even come from?",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 1,
+    "hp": 60,
+    "defence": 15,
+    "defenceChance": 0.35,
+    "minAtk": 4,
+    "maxAtk": 9,
+    "minXp": 4,
+    "maxXp": 8,
+    "missChance": 0.25,
+    "playerMissChance": 0.25,
+    "fleeChance": 0.1,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.9
+      },
+      {
+        "id": "icicle",
+        "amount": 1,
+        "dropChance": 0.5
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      }
+    ]
+  },
+  {
+    "id": "greater_basilisk",
+    "name": "Greater Basilisk",
+    "desc": "It's like a serpent... kinda?",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 2,
+    "hp": 55,
+    "defence": 12,
+    "defenceChance": 0.35,
+    "minAtk": 1,
+    "maxAtk": 8,
+    "minXp": 2,
+    "maxXp": 8,
+    "missChance": 0.1,
+    "playerMissChance": 0.45,
+    "fleeChance": 0.3,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "scale",
+        "amount": 1,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      },
+      {
+        "id": "snake_hide",
+        "amount": 1,
+        "dropChance": 0.2
+      }
+    ]
+  },
+  {
+    "id": "cave_spider",
+    "name": "Cave Spider",
+    "desc": "Cave spider goes brrrrrrrrr.",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 2,
+    "hp": 47,
+    "defence": 8,
+    "defenceChance": 0.35,
+    "minAtk": 1,
+    "maxAtk": 5,
+    "minXp": 4,
+    "maxXp": 8,
+    "missChance": 0.25,
+    "playerMissChance": 0.2,
+    "fleeChance": 0.2,
+    "coins": 7.5,
+    "drop": [
+      {
+        "id": "string",
+        "amount": 1,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      }
+    ]
+  },
+  {
+    "id": "greater_scorpion",
+    "name": "Greater Scorpion",
+    "desc": "Crab",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 2,
+    "hp": 60,
+    "defence": 10,
+    "defenceChance": 0.35,
+    "minAtk": 1,
+    "maxAtk": 6,
+    "minXp": 4,
+    "maxXp": 8,
+    "missChance": 0.25,
+    "playerMissChance": 0.2,
+    "fleeChance": 0.2,
+    "coins": 7.5,
+    "drop": [
+      {
+        "id": "scorpion_arm",
+        "amount": 1,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      }
+    ]
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "desc": "It resembles a pig though? It misses a lot.",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 3,
+    "hp": 80,
+    "defence": 12,
+    "defenceChance": 0.3,
+    "minAtk": 10,
+    "maxAtk": 10,
+    "minXp": 2,
+    "maxXp": 8,
+    "missChance": 0.9,
+    "playerMissChance": 0.25,
+    "fleeChance": 0.2,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.4
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.1
+      },
+      {
+        "id": "bone",
+        "amount": 1,
+        "dropChance": 0.9
+      }
+    ]
+  },
+  {
+    "id": "hydra",
+    "name": "Hydra",
+    "desc": "It's got multiple heads, and is very tough.",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 3,
+    "hp": 70,
+    "defence": 5,
+    "defenceChance": 1,
+    "minAtk": 5,
+    "maxAtk": 12,
+    "minXp": 5,
+    "maxXp": 12,
+    "missChance": 0.25,
+    "playerMissChance": 0.25,
+    "fleeChance": 0.2,
+    "coins": 14,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.3
+      },
+      {
+        "id": "hydra_heart",
+        "amount": 1,
+        "dropChance": 0.75
+      }
+    ]
+  }
+]

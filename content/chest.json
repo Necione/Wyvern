@@ -1,0 +1,44 @@
+[
+  {
+    "floor": 1,
+    "coins": 5,
+    "items": [
+      {
+        "id": "rock",
+        "amount": 1
+      },
+      {
+        "id": "ruby",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "coins": 10,
+    "items": [
+      {
+        "id": "leather",
+        "amount": 1
+      },
+      {
+        "id": "rock",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "coins": 7,
+    "items": [
+      {
+        "id": "crawler_skin",
+        "amount": 1
+      },
+      {
+        "id": "crystal",
+        "amount": 2
+      }
+    ]
+  }
+]

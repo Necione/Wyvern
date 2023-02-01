@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mini_pot",
+    "name": "Mini Healing Potion",
+    "desc": "It may come in handy eventually...",
+    "heal": 10,
+    "price": 10,
+    "materials": [
+      {
+        "id": "crystal",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "medium_pot",
+    "name": "Medium Healing Potion",
+    "desc": "It may come in handy eventually...",
+    "heal": 30,
+    "price": 20,
+    "trader": true,
+    "materials": []
+  },
+  {
+    "id": "lesser_heal_scroll",
+    "name": "Lesser Healing Scroll",
+    "desc": "You're not sure how this works.",
+    "heal": 15,
+    "price": 5,
+    "trader": true,
+    "materials": [
+      {
+        "id": "ruby",
+        "amount": 1
+      }
+    ]
+  }
+]

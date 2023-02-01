@@ -1,0 +1,146 @@
+[
+  {
+    "id": "leather_helm",
+    "name": "Leather Helmet",
+    "desc": "Leather based helmet",
+    "price": 10,
+    "type": "head",
+    "hp": 5,
+    "defence": 5,
+    "defenceChance": 0.05,
+    "materials": [
+      {
+        "id": "leather",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "leather_chestplate",
+    "name": "Leather Chestplate",
+    "desc": "Leather based chestplate",
+    "price": 30,
+    "type": "chest",
+    "hp": 10,
+    "defence": 10,
+    "defenceChance": 0.1,
+    "materials": [
+      {
+        "id": "leather",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "leather_leggings",
+    "name": "Leather Leggings",
+    "desc": "Leather based leggings",
+    "price": 25,
+    "type": "leggings",
+    "hp": 7.5,
+    "defence": 7.5,
+    "defenceChance": 0.075,
+    "materials": [
+      {
+        "id": "leather",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "leather_boots",
+    "name": "Leather Boots",
+    "desc": "Leather based boots",
+    "price": 5,
+    "type": "boots",
+    "hp": 2,
+    "defence": 3,
+    "defenceChance": 0.025,
+    "materials": [
+      {
+        "id": "leather",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "chain_helm",
+    "name": "Chainmail Helmet",
+    "desc": "Chainmail based helmet",
+    "price": 20,
+    "type": "head",
+    "hp": 7.5,
+    "defence": 7.5,
+    "defenceChance": 0.05,
+    "materials": [
+      {
+        "id": "chainmail",
+        "amount": 2
+      },
+      {
+        "id": "rock",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "chain_chestplate",
+    "name": "Chainmail Chestplate",
+    "desc": "Chainmail based chestplate",
+    "price": 45,
+    "type": "chest",
+    "hp": 15,
+    "defence": 12.5,
+    "defenceChance": 0.15,
+    "materials": [
+      {
+        "id": "chainmail",
+        "amount": 3
+      },
+      {
+        "id": "rock",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "chain_leggings",
+    "name": "Chainmail Leggings",
+    "desc": "Chainmail based leggings",
+    "price": 30,
+    "type": "chest",
+    "hp": 9,
+    "defence": 9.5,
+    "defenceChance": 0.05,
+    "materials": [
+      {
+        "id": "chainmail",
+        "amount": 1
+      },
+      {
+        "id": "rock",
+        "amount": 7
+      }
+    ]
+  },
+  {
+    "id": "crawler_helm",
+    "name": "Crawler Helmet",
+    "desc": "It's made out of crawler skin",
+    "price": 20,
+    "type": "head",
+    "hp": 10,
+    "defence": 0,
+    "defenceChance": 0.0,
+    "materials": [
+      {
+        "id": "crawler_skin",
+        "amount": 3
+      },
+      {
+        "id": "rock",
+        "amount": 5
+      }
+    ]
+  }
+]

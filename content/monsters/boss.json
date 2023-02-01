@@ -1,0 +1,21 @@
+[
+  {
+    "id": "guardian",
+    "name": "Guardian",
+    "desc": "The watcher of the second floor",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 1,
+    "hp": 150,
+    "defence": 10,
+    "defenceChance": 0.5,
+    "minAtk": 5,
+    "maxAtk": 10,
+    "minXp": 10,
+    "maxXp": 25,
+    "missChance": 0.1,
+    "playerMissChance": 0.1,
+    "fleeChance": 0,
+    "coins": 20,
+    "drop": []
+  }
+]

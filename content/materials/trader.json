@@ -1,0 +1,9 @@
+[
+  {
+    "id": "chainmail",
+    "name": "Chainmail",
+    "price": 5,
+    "desc": "It's made of chains",
+    "trader": true
+  }
+]
