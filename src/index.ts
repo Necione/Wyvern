@@ -6,7 +6,7 @@ import path from "path";
 import { CommandError, CommandManager } from "@jiman24/slash-commandment";
 import { EmbedBuilder } from "@discordjs/builders";
 import { handleCommandError, RED } from "./constants";
-import { TextChannel } from "discord.js";
+import { TextChannel, PresenceData, ActivityType } from "discord.js";
 import { Battle } from "./structure/Battle";
 
 export const client = new Client({
@@ -39,7 +39,13 @@ commandManager.handleCommandOnCooldown((i, command, timeLeft) => {
 
 commandManager.handleCommandError(handleCommandError);
 
-client.on("ready", async () => {
+const presenceData: PresenceData = {
+  status: "idle",
+};
+
+client.user?.setPresence(presenceData);
+client.user?.setActivity("over Wyvern", { type: ActivityType.Watching });
+  
   commandManager.registerCommands(path.resolve(__dirname, "./commands"));
   console.log(client.user!.username, "is ready!");
 
