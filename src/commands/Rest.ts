@@ -11,7 +11,7 @@ export default class extends Command {
   description = "Take a break and recover energy and health.";
   preExec = [isValidChannel];
   // prevent player from spamming this command
-  cooldown = process.env.ENV === "DEV" ? time.SECOND : time.MINUTE * 5;
+  cooldown = process.env.ENV === "DEV" ? time.SECOND : time.MINUTE * 10;
 
   constructor() {
     super();
