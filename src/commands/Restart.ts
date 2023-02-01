@@ -5,7 +5,7 @@ import { Player } from "../structure/Player";
 import { isValidChannel } from "../execs/preExecs";
 
 export default class extends Command {
-  name = "restart";
+  name = "data_reset";
   description = "Restart your file.";
   preExec = [isValidChannel];
 
