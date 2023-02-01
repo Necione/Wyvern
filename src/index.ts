@@ -43,6 +43,7 @@ const presenceData: PresenceData = {
   status: "idle",
 };
 
+client.on("ready", async () => {
 client.user?.setPresence(presenceData);
 client.user?.setActivity("over Wyvern", { type: ActivityType.Watching });
   
