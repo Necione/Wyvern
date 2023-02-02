@@ -42,7 +42,7 @@ export default class extends Command {
   async battle(i: CommandInteraction) {
     const player = await Player.load(i.user.id);
 
-    const isBoss = player.redRoomPassed >= 20;
+    const isBoss = player.redRoomPassed >= player.redRoomRequired;
     const monster = isBoss
       ? Monster.randomBoss(player.floor)
       : Monster.random(player.floor, player.phase);

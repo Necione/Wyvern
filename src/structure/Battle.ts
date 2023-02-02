@@ -220,6 +220,7 @@ export class Battle {
       if (this.monster.isBoss) {
         this.player.floor++;
         this.player.redRoomPassed = 0;
+        this.player.redRoomRequired += 5;
         this.player.phase = 1;
 
         await this.player.save();

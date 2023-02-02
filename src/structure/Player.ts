@@ -36,6 +36,7 @@ export class Player extends Entity {
   floor = 1;
   phase = 1;
   redRoomPassed = 0;
+  redRoomRequired = 20;
   coins = 0;
   isDead = false;
 
@@ -88,6 +89,7 @@ export class Player extends Entity {
     this.floor = 1;
     this.phase = 1;
     this.redRoomPassed = 0;
+    this.redRoomRequired = 20;
     this.coins = 0;
     this.isDead = false;
   }
@@ -216,7 +218,7 @@ export class Player extends Entity {
     const fields = [
       `> \`🗺️ Current Floor\` - **${this.floor}**`,
       `> \`🧭 Current Phase\` - **${this.phase}**`,
-      `> \`☠️ Red Rooms\` - **${this.redRoomPassed}/20**`,
+      `> \`☠️ Red Rooms\` - **${this.redRoomPassed}/${this.redRoomRequired}**`,
       `> \`⭐ Level\` - **${this.level}** | \`💎 XP\` - **${this.xp}/${this.xpRequired}**`,
     ].join("\n");
 
