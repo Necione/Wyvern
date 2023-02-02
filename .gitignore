@@ -7,3 +7,5 @@ content/settings.json
 bot.zip
 *.pdf
 patches
+content/dev-settings.json
+content/settings.json
