@@ -22,11 +22,16 @@ export default class extends Command {
 
     const player = await Player.load(i.user.id);
 
-    if (player.energy < 100) {
+    if (player.energy < 100 || player.hp < player.maxHP) {
       let energyRecovered = (player.energy += 40);
+      let healthRecovered = player.hp + 5;
 
       if (energyRecovered > 100) {
         player.energy = 100;
+      }
+
+      if (healthRecovered > player.maxHP) {
+        player.hp = player.maxHP;
       }
 
       await player.save();
@@ -38,7 +43,7 @@ export default class extends Command {
     const embed = new EmbedBuilder()
       .setColor(GREEN)
       .setDescription(
-        `You took a rest and recovered +\`${LIGHTNING} 40 Energy\`! `
+        `You took a rest and recovered \`${LIGHTNING} 40 Energy\` and \`${HEART} 5 HP\`! `
       );
 
     await i.editReply({ embeds: [embed] });
