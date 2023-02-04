@@ -45,8 +45,9 @@ export default class extends Command {
 
       player.potionsId = remove(item.id, player.potionsId);
       player.hp += item.heal;
+      await player.save();
 
-      if (player.hp + item.heal > player.maxHP) {
+      if (player.hp + item.heal >= player.maxHP) {
         player.hp = player.maxHP;
       }
 

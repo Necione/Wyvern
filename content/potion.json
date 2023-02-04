@@ -16,10 +16,15 @@
     "id": "medium_pot",
     "name": "Medium Healing Potion",
     "desc": "It may come in handy eventually...",
-    "heal": 30,
-    "price": 20,
+    "heal": 25,
+    "price": 15,
     "trader": true,
-    "materials": []
+    "materials": [
+      {
+        "id": "crystal",
+        "amount": 2
+      }
+    ]
   },
   {
     "id": "lesser_heal_scroll",
