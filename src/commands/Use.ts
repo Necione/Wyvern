@@ -2,7 +2,7 @@ import { remove } from "@jiman24/discordjs-utils";
 import { Command, CommandError } from "@jiman24/slash-commandment";
 import { CommandInteraction, EmbedBuilder } from "discord.js";
 import { client } from "..";
-import { HEART } from "../constants";
+import { HEART, LIGHTNING } from "../constants";
 import { Player } from "../structure/Player";
 import { isPotion } from "../structure/Potion";
 
@@ -45,16 +45,32 @@ export default class extends Command {
 
       player.potionsId = remove(item.id, player.potionsId);
       player.hp += item.heal;
+      player.energy += item.energy;
       await player.save();
 
       if (player.hp + item.heal >= player.maxHP) {
         player.hp = player.maxHP;
       }
+      if (player.energy + item.energy >= 100) {
+        player.energy = 100;
+      }
 
       embed.setTitle(`You used a ${item.name}!`);
-      embed.setDescription(`Regained + \`${HEART} ${item.heal} HP\``);
+      let description = "Regained";
+      if (item.heal !== 0) {
+        description += ` +\`${HEART} ${item.heal} HP\``;
+      }
+      if (item.energy !== 0) {
+        if (item.heal !== 0) {
+          description += " and";
+        }
+        description += ` +\`${LIGHTNING} ${item.energy} Energy\``;
+      }
+      description += "!";
+
+      embed.setDescription(description);
     } else {
-      throw new CommandError("`⚠️` Item does not have functionality");
+      throw new CommandError("`⚠️` Item does not have functionality!");
     }
 
     await i.editReply({ embeds: [embed] });

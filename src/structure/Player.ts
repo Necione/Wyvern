@@ -39,6 +39,7 @@ export class Player extends Entity {
   redRoomRequired = 20;
   coins = 0;
   isDead = false;
+  deathCount = 0;
 
   constructor(id: string) {
     super(id, `<@${id}>`, Player.DEFAULT_HP);
@@ -92,6 +93,7 @@ export class Player extends Entity {
     this.redRoomRequired = 20;
     this.coins = 0;
     this.isDead = false;
+    this.deathCount = 0;
   }
 
   get armorSet() {
@@ -220,6 +222,9 @@ export class Player extends Entity {
       `> \`🧭 Current Phase\` - **${this.phase}**`,
       `> \`☠️ Red Rooms\` - **${this.redRoomPassed}/${this.redRoomRequired}**`,
       `> \`⭐ Level\` - **${this.level}** | \`💎 XP\` - **${this.xp}/${this.xpRequired}**`,
+      this.deathCount !== 0
+        ? `> \`🦴 Death Count\` - **${this.deathCount}**`
+        : "",
     ].join("\n");
 
     const armorSet = this.armorSet;

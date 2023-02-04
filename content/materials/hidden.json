@@ -61,5 +61,12 @@
     "price": 30,
     "desc": "Squishy.",
     "hidden": true
+  },
+  {
+    "id": "honey",
+    "name": "Honey",
+    "price": 0,
+    "desc": "Aren't those from bees?",
+    "hidden": true
   }
 ]

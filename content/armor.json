@@ -95,7 +95,7 @@
     "materials": [
       {
         "id": "chainmail",
-        "amount": 3
+        "amount": 4
       },
       {
         "id": "rock",
@@ -108,7 +108,27 @@
     "name": "Chainmail Leggings",
     "desc": "Chainmail based leggings",
     "price": 30,
-    "type": "chest",
+    "type": "leggings",
+    "hp": 9,
+    "defence": 9.5,
+    "defenceChance": 0.05,
+    "materials": [
+      {
+        "id": "chainmail",
+        "amount": 3
+      },
+      {
+        "id": "rock",
+        "amount": 7
+      }
+    ]
+  },
+  {
+    "id": "chain_boots",
+    "name": "Chainmail Boots",
+    "desc": "Chainmail based boots",
+    "price": 20,
+    "type": "boots",
     "hp": 9,
     "defence": 9.5,
     "defenceChance": 0.05,
@@ -119,7 +139,7 @@
       },
       {
         "id": "rock",
-        "amount": 7
+        "amount": 3
       }
     ]
   },
@@ -139,7 +159,7 @@
       },
       {
         "id": "rock",
-        "amount": 5
+        "amount": 10
       }
     ]
   }

@@ -19,7 +19,7 @@
   },
   {
     "id": "crystal",
-    "name": "Healing Crystal",
+    "name": "Crystal",
     "price": 20,
     "desc": "Can be used to make healing potions"
   },
@@ -67,12 +67,5 @@
     "price": 30,
     "desc": "It looks pretty weird.",
     "hidden": true
-  },
-  {
-    "id": "gold",
-    "name": "Gold",
-    "price": 100,
-    "desc": "Precious rock",
-    "trader": true
   }
 ]

@@ -5,5 +5,12 @@
     "price": 5,
     "desc": "It's made of chains",
     "trader": true
+  },
+  {
+    "id": "adamantine",
+    "name": "Adamantine",
+    "price": 50,
+    "desc": "Pricey!",
+    "trader": true
   }
 ]

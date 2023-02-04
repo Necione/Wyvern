@@ -265,7 +265,7 @@
     "maxAtk": 12,
     "minXp": 5,
     "maxXp": 12,
-    "missChance": 0.1,
+    "missChance": 0.15,
     "playerMissChance": 0.25,
     "fleeChance": 0.2,
     "coins": 14,
@@ -284,6 +284,73 @@
         "id": "hydra_heart",
         "amount": 1,
         "dropChance": 0.75
+      }
+    ]
+  },
+  {
+    "id": "pterodactyl",
+    "name": "Pterodactyl",
+    "desc": "Fancy bird!",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 4,
+    "hp": 100,
+    "defence": 10,
+    "defenceChance": 0.25,
+    "minAtk": 7,
+    "maxAtk": 12,
+    "minXp": 5,
+    "maxXp": 12,
+    "missChance": 0.15,
+    "playerMissChance": 0.25,
+    "fleeChance": 0.2,
+    "coins": 13,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.2
+      }
+    ]
+  },
+  {
+    "id": "even_greater_basilisk",
+    "name": "Even Greater Basilisk",
+    "desc": "It's like a serpent... kinda?",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "phase": 5,
+    "hp": 100,
+    "defence": 7,
+    "defenceChance": 0.15,
+    "minAtk": 8,
+    "maxAtk": 12,
+    "minXp": 1,
+    "maxXp": 10,
+    "missChance": 0.15,
+    "playerMissChance": 0.45,
+    "fleeChance": 0.2,
+    "coins": 10,
+    "drop": [
+      {
+        "id": "rock",
+        "amount": 2,
+        "dropChance": 0.9
+      },
+      {
+        "id": "lesser_heal_scroll",
+        "amount": 1,
+        "dropChance": 0.2
+      },
+      {
+        "id": "scale",
+        "amount": 2,
+        "dropChance": 0.2
       }
     ]
   }

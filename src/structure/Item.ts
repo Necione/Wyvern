@@ -1,5 +1,5 @@
 import { client } from "..";
-import { HEART, SHIELD, SWORD, Unit, EXPLOSION } from "../constants";
+import { HEART, SHIELD, SWORD, Unit, EXPLOSION, LIGHTNING } from "../constants";
 import { formatPercent } from "@jiman24/discordjs-utils";
 
 export interface Item {
@@ -42,9 +42,18 @@ export function showStat<T extends Item>(item: T) {
       lines.push(`> + \`${EXPLOSION} ${formatPercent(item.critChance)} Crit %\` when equipped`);
       break;
     case "potion":
-      //@ts-ignore
-      lines.push(`> + \`${HEART} ${item.heal} HP\` upon use`);
-      break;
+          //@ts-ignore
+        if (item.heal !== 0) {
+          //@ts-ignore
+          lines.push(`> + \`${HEART} ${item.heal} HP\` upon use`);
+        }
+          //@ts-ignore
+        if (item.energy !== 0) {
+          //@ts-ignore
+          lines.push(`> + \`${LIGHTNING} ${item.energy} Energy\` upon use`);
+        }
+        break;
+        
     case "armor":
       //@ts-ignore
       lines.push(`> + \`${HEART} ${item.hp} HP\` when equipped`);

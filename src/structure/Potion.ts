@@ -4,6 +4,7 @@ import { ItemBuildMaterial } from "./Material";
 
 export interface Potion extends Item, ItemBuildMaterial {
   heal: number;
+  energy: number;
 }
 
 export const potions = getData<Potion>("content", "potion.json");

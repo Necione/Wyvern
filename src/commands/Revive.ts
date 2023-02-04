@@ -20,21 +20,19 @@ export default class extends Command {
     const player = await Player.load(i.user.id);
     await i.deferReply();
 
-    if (player.isDead === false) {
-      this.cooldown = 0;
-      throw new CommandError(`\`⚠️\` You cannot use this command`);
-    } else {
+    if (player.isDead === true) {
       player.energy = 100;
       player.hp = player.maxHP;
       player.isDead = false;
 
       await player.save();
+      const embed = new EmbedBuilder()
+        .setColor(GREEN)
+        .setDescription(`You have been revived from the dead!`);
+      await i.editReply({ embeds: [embed] });
+    } else {
+      this.cooldown = 0;
+      throw new CommandError(`\`⚠️\` You cannot use this command`);
     }
-
-    const embed = new EmbedBuilder()
-      .setColor(GREEN)
-      .setDescription(`You have been revived from the dead!`);
-
-    await i.editReply({ embeds: [embed] });
   }
 }

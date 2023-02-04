@@ -171,6 +171,7 @@ export class Battle {
     if (this.player.hp <= 0) {
       this.player.redRoomPassed++;
       this.player.isDead = true;
+      this.player.deathCount++;
 
       await this.player.save();
       throw new BattleEndError("**You have died!**");
@@ -315,7 +316,7 @@ export class Battle {
 
   handleHeavyAttack() {
     const isDefended = random.bool(this.monster.defenceChance);
-    let dmgDone = this.player.attack() * 2.5;
+    let dmgDone = this.player.attack() * 2;
     let isCrit = random.bool(this.player.critChance);
 
     if (isCrit) {
@@ -333,7 +334,7 @@ export class Battle {
             )}\` damage to the ${this.monster.name}.`
           );
         this.monsterHp -= dmgDone;
-        this.player.energy -= 1;
+        this.player.energy -= 2;
         return embed;
       } else {
         dmgDone = dmgDone * this.player.crit;
@@ -347,7 +348,7 @@ export class Battle {
             }.`
           );
         this.monsterHp -= dmgDone;
-        this.player.energy -= 1;
+        this.player.energy -= 2;
         return embed;
       }
     } else {
@@ -363,7 +364,7 @@ export class Battle {
             }.`
           );
         this.monsterHp -= dmgDone;
-        this.player.energy -= 1;
+        this.player.energy -= 2;
         return embed;
       } else {
         const embed = new EmbedBuilder()
@@ -375,7 +376,7 @@ export class Battle {
             }.`
           );
         this.monsterHp -= dmgDone;
-        this.player.energy -= 1;
+        this.player.energy -= 2;
         return embed;
       }
     }

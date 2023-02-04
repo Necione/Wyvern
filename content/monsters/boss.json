@@ -17,5 +17,24 @@
     "fleeChance": 0,
     "coins": 20,
     "drop": []
+  },
+  {
+    "id": "the_watcher",
+    "name": "The Watcher",
+    "desc": "It's got a ton of eyes...",
+    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "floor": 2,
+    "hp": 225,
+    "defence": 15,
+    "defenceChance": 0.5,
+    "minAtk": 8,
+    "maxAtk": 13,
+    "minXp": 20,
+    "maxXp": 35,
+    "missChance": 0.15,
+    "playerMissChance": 0.15,
+    "fleeChance": 0,
+    "coins": 20,
+    "drop": []
   }
 ]

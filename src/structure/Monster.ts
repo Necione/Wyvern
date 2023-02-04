@@ -124,8 +124,10 @@ export class Monster extends Entity {
   }
 
   static random(floor: number, phase: number) {
+    const maxPhase = phase;
+    const minPhase = phase >= 3 ? phase - 2 : 1;
     const monsters = Monster.all.filter(
-      (x) => x.floor === floor && x.phase <= phase
+      (x) => x.floor === floor && x.phase <= maxPhase && x.phase >= minPhase
     );
     return random.pick(monsters);
   }
