@@ -38,7 +38,7 @@ export default class extends Command {
     const embed = new EmbedBuilder()
       .setColor(GREEN)
       .setDescription(
-        `You took a rest and recovered \`${LIGHTNING} +40 Energy\`! `
+        `You took a rest and recovered +\`${LIGHTNING} 40 Energy\`! `
       );
 
     await i.editReply({ embeds: [embed] });
