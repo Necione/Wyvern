@@ -58,13 +58,13 @@ export default class extends Command {
       embed.setTitle(`You used a ${item.name}!`);
       let description = "Regained";
       if (item.heal !== 0) {
-        description += ` +\`${HEART} ${item.heal} HP\``;
+        description += ` \`${HEART} ${item.heal} HP\``;
       }
       if (item.energy !== 0) {
         if (item.heal !== 0) {
           description += " and";
         }
-        description += ` +\`${LIGHTNING} ${item.energy} Energy\``;
+        description += ` \`${LIGHTNING} ${item.energy} Energy\``;
       }
       description += "!";
 
