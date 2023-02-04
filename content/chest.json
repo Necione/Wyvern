@@ -40,5 +40,37 @@
         "amount": 2
       }
     ]
+  },
+  {
+    "floor": 2,
+    "coins": 5,
+    "items": [
+      {
+        "id": "rock",
+        "amount": 2
+      },
+      {
+        "id": "crystal",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "floor": 2,
+    "coins": 7,
+    "items": [
+      {
+        "id": "ruby",
+        "amount": 1
+      },
+      {
+        "id": "crystal",
+        "amount": 1
+      },
+      {
+        "id": "string",
+        "amount": 2
+      }
+    ]
   }
 ]

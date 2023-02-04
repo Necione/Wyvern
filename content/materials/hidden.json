@@ -42,6 +42,13 @@
     "hidden": true
   },
   {
+    "id": "icicle",
+    "name": "Icicle",
+    "price": 10,
+    "desc": "It's very cold lmao.",
+    "hidden": true
+  },
+  {
     "id": "huge_eye",
     "name": "Huge Eye",
     "price": 0,

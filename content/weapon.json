@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": "forsted_dagger",
+    "id": "frosted_dagger",
     "name": "Frosted Dagger",
     "desc": "It's really cold for some reason",
     "atk": 4.5,
@@ -94,18 +94,6 @@
         "amount": 2
       }
     ]
-  },
-  {
-    "id": "icicle",
-    "name": "Icicle",
-    "desc": "I don't think this is supposed to be a weapon...",
-    "atk": 2.25,
-    "crit": 0,
-    "critChance": 0,
-    "heal": 0,
-    "price": 30,
-    "trader": true,
-    "materials": []
   },
   {
     "id": "iron_dagger",

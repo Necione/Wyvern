@@ -128,6 +128,7 @@ export default class extends Command {
       return;
     } else if (isHealingWell) {
       player.hp += 15;
+      await player.save();
 
       const embed = new EmbedBuilder()
         .setColor(GREEN)

@@ -265,7 +265,7 @@
     "maxAtk": 12,
     "minXp": 5,
     "maxXp": 12,
-    "missChance": 0.25,
+    "missChance": 0.1,
     "playerMissChance": 0.25,
     "fleeChance": 0.2,
     "coins": 14,

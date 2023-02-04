@@ -26,7 +26,7 @@ export default class extends Command {
 
     const monster = battle.monster;
 
-    if (player.energy - 25 < 0) {
+    if (player.energy - 35 < 0) {
       let embed = new EmbedBuilder()
         .setColor(RED)
         .setDescription(`You do not have enough energy to forceflee!`);
@@ -46,13 +46,13 @@ export default class extends Command {
       return;
     }
 
-    player.energy -= 25;
+    player.energy -= 35;
     await player.save();
 
     const embed = new EmbedBuilder()
       .setColor(BLUE)
       .setTitle(
-        `You spent \`${LIGHTNING} 25 Energy\` and fled from ${monster.name}!`
+        `You spent \`${LIGHTNING} 35 Energy\` and fled from ${monster.name}!`
       );
 
     await battle.editReply(embed);
