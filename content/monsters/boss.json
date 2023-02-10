@@ -1,9 +1,9 @@
 [
   {
-    "id": "guardian",
-    "name": "Guardian",
+    "id": "eye_of_the_storm",
+    "name": "Eye of the Storm",
     "desc": "The watcher of the second floor",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "thumbnailUrl": "https://file.coffee/u/Zv5NvPykXwD_pgwAkF3xN.webp",
     "floor": 1,
     "hp": 150,
     "defence": 10,
@@ -19,10 +19,10 @@
     "drop": []
   },
   {
-    "id": "the_watcher",
-    "name": "The Watcher",
-    "desc": "It's got a ton of eyes...",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "primo_geovishap",
+    "name": "Primo Geovishap",
+    "desc": "The watcher of the third floor",
+    "thumbnailUrl": "https://file.coffee/u/rUnBokU3aBqC93R7baX3V.webp",
     "floor": 2,
     "hp": 225,
     "defence": 15,

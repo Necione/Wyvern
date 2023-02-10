@@ -1,3 +1,4 @@
+import { random } from "@jiman24/discordjs-utils";
 import { getData } from "../constants";
 import { getItem, getItems, Item } from "./Item";
 import { ItemBuildMaterial } from "./Material";
@@ -9,6 +10,7 @@ export interface Weapon extends Item, ItemBuildMaterial {
 }
 
 export const weapons = getData<Weapon>("content", "weapon.json");
+export const reforges = getData<Weapon>("content", "reforge.json");
 
 export function isWeapon(item: Item | Weapon): item is Weapon {
   if ("atk" in item) {
@@ -24,4 +26,12 @@ export function getWeapon(id: string) {
 
 export function getWeapons(ids: string[]) {
   return getItems(weapons, ids);
+}
+
+export function getWeaponReforge(id: string) {
+  return getItem(reforges, id);
+}
+
+export function randomReforges() {
+  return random.pick(reforges);
 }

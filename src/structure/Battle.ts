@@ -79,8 +79,7 @@ export class Battle {
 
     const monster =
       Monster.all.find((x) => x.id === data.monsterId) ||
-      Monster.bosses.find((x) => x.id === data.monsterId) ||
-      Monster.specials.find((x) => x.id === data.monsterId);
+      Monster.bosses.find((x) => x.id === data.monsterId);
 
     if (!monster) {
       throw new CommandError(
@@ -207,7 +206,7 @@ export class Battle {
 
       const xp = this.monster.xpDrop();
       messages.push(`You've earned **${xp}** xp`);
-      messages.push(`You've earned **${this.monster.coins}** coins`);
+      messages.push(`You've earned **${this.monster.coins}** Mora`);
 
       const isLevelUp = this.player.addXp(xp);
 

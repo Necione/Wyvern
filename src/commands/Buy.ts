@@ -39,7 +39,7 @@ export default class extends Command {
 
     for (let i = 0; i < amount; i++) {
       if (player.coins < item.price) {
-        throw new CommandError(`\`⚠️\` Insufficient coins`);
+        throw new CommandError(`\`⚠️\` Insufficient Mora`);
       }
 
       // deduct player's coin

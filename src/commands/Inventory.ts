@@ -4,6 +4,7 @@ import { CommandInteraction, EmbedBuilder } from "discord.js";
 import { Pagination } from "@jiman24/discordjs-pagination";
 import { Player } from "../structure/Player";
 import { isValidChannel } from "../execs/preExecs";
+import { isWeapon } from "../structure/Weapon";
 
 export default class extends Command {
   name = "inventory";
@@ -29,14 +30,24 @@ export default class extends Command {
       const content = page
         .map((x) => {
           const item = x.value;
-          return `\`${x.count}x\` ${item.name} (ID: ${item.id})\n> ${item.desc}`;
+          let name = item.name;
+
+          if (
+            isWeapon(item) &&
+            player.weaponReforge &&
+            item.id === player.equippedWeapons
+          ) {
+            name = player.weapon()!.name;
+          }
+
+          return `\`${x.count}x\` ${name} (ID: ${item.id})\n> ${item.desc}`;
         })
         .join("\n\n");
 
       const embed = new EmbedBuilder()
         .setTitle(`${i.user.username}#${i.user.discriminator}'s inventory:`)
         .setColor("Random")
-        .setDescription(`Coins: __${bold(player.coins)}__\n${content}`);
+        .setDescription(`Mora: __${bold(player.coins)}__\n${content}`);
 
       return embed;
     });

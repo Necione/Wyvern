@@ -1,9 +1,9 @@
 [
   {
-    "id": "slime",
-    "name": "Slime",
-    "desc": "Your common neighbourhood slime...",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "hilichurl1",
+    "name": "[ Lv1 ] Hilichurl",
+    "desc": "The primitive wandering inhabitants of Teyvat's wildernesses.",
+    "thumbnailUrl": "https://file.coffee/u/NijxJxBiDAF9-0tCGXRY_.webp",
     "floor": 1,
     "phase": 1,
     "hp": 15,
@@ -19,27 +19,32 @@
     "coins": 5,
     "drop": [
       {
-        "id": "rock",
+        "id": "damaged_mask",
         "amount": 1,
         "dropChance": 0.9
       },
       {
-        "id": "lesser_heal_scroll",
+        "id": "stained_mask",
         "amount": 1,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
-        "id": "crystal",
+        "id": "onimous_mask",
         "amount": 1,
-        "dropChance": 0.75
+        "dropChance": 0.05
+      },
+      {
+        "id": "rock",
+        "amount": 1,
+        "dropChance": 0.9
       }
     ]
   },
   {
-    "id": "snake",
-    "name": "Snake",
-    "desc": "A very agile creature, may be difficult to hit.",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "anemo_slime1",
+    "name": "[ Lv1 ] Anemo Slime",
+    "desc": "It is able to float in the air due to the power of Anemo.",
+    "thumbnailUrl": "https://file.coffee/u/b_adw8hj83cozmujBCzN3.webp",
     "floor": 1,
     "phase": 1,
     "hp": 12.5,
@@ -55,32 +60,27 @@
     "coins": 5,
     "drop": [
       {
-        "id": "scale",
+        "id": "slime_condensate",
         "amount": 1,
         "dropChance": 0.9
       },
       {
-        "id": "lesser_heal_scroll",
+        "id": "slime_secretions",
         "amount": 1,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
-        "id": "snake_hide",
+        "id": "slime_concentrate",
         "amount": 1,
-        "dropChance": 0.1
-      },
-      {
-        "id": "crystal",
-        "amount": 1,
-        "dropChance": 0.75
+        "dropChance": 0.05
       }
     ]
   },
   {
-    "id": "crawler",
-    "name": "Crawler",
-    "desc": "A tall creature with hard skin!",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "electro_slime1",
+    "name": "[ Lv1 ] Electro Slime",
+    "desc": "A small monster created by the coalescing of Electro dispersed throughout nature.",
+    "thumbnailUrl": "https://file.coffee/u/taZCEULrUqzITwGfjaP5z.webp",
     "floor": 1,
     "phase": 1,
     "hp": 17,
@@ -96,37 +96,27 @@
     "coins": 5,
     "drop": [
       {
-        "id": "rock",
+        "id": "slime_condensate",
         "amount": 1,
         "dropChance": 0.9
       },
       {
-        "id": "crystal",
+        "id": "slime_secretions",
         "amount": 1,
-        "dropChance": 0.9
+        "dropChance": 0.25
       },
       {
-        "id": "lesser_heal_scroll",
+        "id": "slime_concentrate",
         "amount": 1,
-        "dropChance": 0.1
-      },
-      {
-        "id": "crawler_skin",
-        "amount": 1,
-        "dropChance": 0.3
-      },
-      {
-        "id": "crawler_heart",
-        "amount": 1,
-        "dropChance": 0.1
+        "dropChance": 0.05
       }
     ]
   },
   {
-    "id": "sandworm",
-    "name": "Sandworm",
-    "desc": "Just a worm that likes to dig in the sand!",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "cryo_hilichurl1",
+    "name": "[ Lv1 ] Cryo Hilichurl",
+    "desc": "The primitive wandering inhabitants of Teyvat's wildernesses.",
+    "thumbnailUrl": "https://file.coffee/u/YFaV8RL0F4BOevcZOCNMB.webp",
     "floor": 1,
     "phase": 1,
     "hp": 17,
@@ -142,261 +132,101 @@
     "coins": 5,
     "drop": [
       {
-        "id": "crystal",
+        "id": "damaged_mask",
         "amount": 1,
-        "dropChance": 0.5
+        "dropChance": 0.75
       },
       {
-        "id": "lesser_heal_scroll",
+        "id": "stained_mask",
         "amount": 1,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
-        "id": "string",
+        "id": "onimous_mask",
         "amount": 1,
-        "dropChance": 0.5
-      },
-      {
-        "id": "sharp_tooth",
-        "amount": 1,
-        "dropChance": 0.35
+        "dropChance": 0.05
       },
       {
         "id": "rock",
-        "amount": 2,
+        "amount": 1,
         "dropChance": 0.9
       }
     ]
   },
   {
-    "id": "baby_yeti",
-    "name": "Baby Yeti",
-    "desc": "Where did this even come from?",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
+    "id": "mitachurl1",
+    "name": "[ Lv1 ] Mitachurl",
+    "desc": "Muscular hilichurls who wield large two-handed axes.",
+    "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
     "floor": 1,
     "phase": 2,
-    "hp": 35,
-    "defence": 7,
-    "defenceChance": 0.35,
-    "minAtk": 4,
-    "maxAtk": 6,
-    "minXp": 4,
-    "maxXp": 8,
-    "missChance": 0.25,
-    "playerMissChance": 0.25,
-    "fleeChance": 0.1,
-    "coins": 10,
-    "drop": [
-      {
-        "id": "rock",
-        "amount": 2,
-        "dropChance": 0.9
-      },
-      {
-        "id": "icicle",
-        "amount": 1,
-        "dropChance": 0.5
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      }
-    ]
-  },
-  {
-    "id": "basilisk",
-    "name": "Basilisk",
-    "desc": "It's like a serpent... kinda?",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 2,
-    "hp": 35,
-    "defence": 5,
-    "defenceChance": 0.3,
-    "minAtk": 1,
-    "maxAtk": 6,
-    "minXp": 2,
-    "maxXp": 8,
+    "hp": 17,
+    "defence": 8,
+    "defenceChance": 0.2,
+    "minAtk": 2,
+    "maxAtk": 3,
+    "minXp": 1,
+    "maxXp": 5,
     "missChance": 0.15,
-    "playerMissChance": 0.35,
-    "fleeChance": 0.3,
-    "coins": 10,
-    "drop": [
-      {
-        "id": "scale",
-        "amount": 1,
-        "dropChance": 0.9
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      },
-      {
-        "id": "snake_hide",
-        "amount": 1,
-        "dropChance": 0.2
-      }
-    ]
-  },
-  {
-    "id": "strange_cattle",
-    "name": "Strange Cattle",
-    "desc": "Moooooooooooooooo",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 2,
-    "hp": 30,
-    "defence": 5,
-    "defenceChance": 0.35,
-    "minAtk": 1,
-    "maxAtk": 5,
-    "minXp": 4,
-    "maxXp": 8,
-    "missChance": 0.25,
-    "playerMissChance": 0.2,
-    "fleeChance": 0.2,
-    "coins": 7.5,
-    "drop": [
-      {
-        "id": "rock",
-        "amount": 3,
-        "dropChance": 1
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      }
-    ]
-  },
-  {
-    "id": "spider",
-    "name": "Spider",
-    "desc": "Spider goes brrrrrrrrr.",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 2,
-    "hp": 27,
-    "defence": 5,
-    "defenceChance": 0.35,
-    "minAtk": 1,
-    "maxAtk": 5,
-    "minXp": 4,
-    "maxXp": 8,
-    "missChance": 0.25,
-    "playerMissChance": 0.2,
-    "fleeChance": 0.2,
-    "coins": 7.5,
-    "drop": [
-      {
-        "id": "string",
-        "amount": 1,
-        "dropChance": 0.9
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      }
-    ]
-  },
-  {
-    "id": "scorpion",
-    "name": "Scorpion",
-    "desc": "Crab",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 2,
-    "hp": 30,
-    "defence": 10,
-    "defenceChance": 0.35,
-    "minAtk": 1,
-    "maxAtk": 5,
-    "minXp": 4,
-    "maxXp": 8,
-    "missChance": 0.25,
-    "playerMissChance": 0.2,
-    "fleeChance": 0.2,
-    "coins": 7.5,
-    "drop": [
-      {
-        "id": "scorpion_arm",
-        "amount": 1,
-        "dropChance": 0.9
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      }
-    ]
-  },
-  {
-    "id": "lesser_orc",
-    "name": "Lesser Orc",
-    "desc": "It resembles a pig though? It misses a lot.",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 3,
-    "hp": 40,
-    "defence": 6,
-    "defenceChance": 0.3,
-    "minAtk": 10,
-    "maxAtk": 10,
-    "minXp": 2,
-    "maxXp": 8,
-    "missChance": 0.9,
-    "playerMissChance": 0.25,
-    "fleeChance": 0.2,
-    "coins": 10,
-    "drop": [
-      {
-        "id": "rock",
-        "amount": 2,
-        "dropChance": 0.4
-      },
-      {
-        "id": "lesser_heal_scroll",
-        "amount": 1,
-        "dropChance": 0.1
-      },
-      {
-        "id": "bone",
-        "amount": 1,
-        "dropChance": 0.9
-      }
-    ]
-  },
-  {
-    "id": "greater_slime",
-    "name": "Greater Slime",
-    "desc": "Your not so common neighbourhood slime.",
-    "thumbnailUrl": "https://file.coffee/u/RVLwciXUA3ZIW6B1vKn8Y.webp",
-    "floor": 1,
-    "phase": 4,
-    "hp": 30,
-    "defence": 1,
-    "defenceChance": 0.1,
-    "minAtk": 3,
-    "maxAtk": 6,
-    "minXp": 2,
-    "maxXp": 7,
-    "missChance": 0.2,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
-    "coins": 8.75,
+    "coins": 5,
     "drop": [
       {
-        "id": "rock",
-        "amount": 2,
-        "dropChance": 0.8
+        "id": "damaged_mask",
+        "amount": 1,
+        "dropChance": 0.75
       },
       {
-        "id": "lesser_heal_scroll",
+        "id": "stained_mask",
         "amount": 1,
-        "dropChance": 0.15
+        "dropChance": 0.25
+      },
+      {
+        "id": "onimous_mask",
+        "amount": 1,
+        "dropChance": 0.05
+      },
+      {
+        "id": "rock",
+        "amount": 1,
+        "dropChance": 0.9
+      }
+    ]
+  },
+  {
+    "id": "ruin_guard1",
+    "name": "[ Lv1 ] Ruin Guard",
+    "desc": "An ancient humanoid war machine.",
+    "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
+    "floor": 1,
+    "phase": 3,
+    "hp": 25,
+    "defence": 10,
+    "defenceChance": 0.4,
+    "minAtk": 5,
+    "maxAtk": 9,
+    "minXp": 4,
+    "maxXp": 7,
+    "missChance": 0.15,
+    "playerMissChance": 0.15,
+    "fleeChance": 0.25,
+    "coins": 9,
+    "drop": [
+      {
+        "id": "chaos_device",
+        "amount": 1,
+        "dropChance": 0.75
+      },
+      {
+        "id": "chaos_circuit",
+        "amount": 1,
+        "dropChance": 0.25
+      },
+      {
+        "id": "chaos_core",
+        "amount": 1,
+        "dropChance": 0.05
       }
     ]
   }

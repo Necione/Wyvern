@@ -4,40 +4,34 @@ import { EmbedBuilder } from "discord.js";
 import { client } from "..";
 import { getData, Unit } from "../constants";
 
-const chestData = getData<ChestData>("content", "chest.json");
+const mineData = getData<MineData>("content", "mine.json");
 
-interface ChestData {
+interface MineData {
   floor: number;
-  coins: number;
   items: {
     id: string;
     amount: number;
   }[];
 }
 
-export class Chest {
+export class Mine {
   static DROP_CHANCE = 1;
 
-  constructor(
-    public floor: number,
-    public coins: number,
-    public items: Unit[]
-  ) {}
+  constructor(public floor: number, public items: Unit[]) {}
 
   static get all() {
-    return chestData.map((x) => new Chest(x.floor, x.coins, x.items));
+    return mineData.map((x) => new Mine(x.floor, x.items));
   }
 
   static random(floor: number) {
-    const chests = Chest.all.filter((x) => x.floor === floor);
-    return random.pick(chests);
+    const mines = Mine.all.filter((x) => x.floor === floor);
+    return random.pick(mines);
   }
 
   show() {
     const messages = [];
 
-    messages.push("You've got a chest!");
-    messages.push(`You earned **${this.coins}** Mora!`);
+    messages.push("You went mining!");
 
     for (const itemData of this.items) {
       const item = client.getItem(itemData.id);

@@ -1,6 +1,6 @@
 import { EmbedBuilder } from "@discordjs/builders";
 import { CommandError } from "@jiman24/slash-commandment";
-import { bold, random, formatPercent } from "@jiman24/discordjs-utils";
+import { bold, formatPercent } from "@jiman24/discordjs-utils";
 import { client } from "..";
 import {
   BLUE,
@@ -14,7 +14,7 @@ import {
 import { Entity } from "./Entity";
 import { User } from "discord.js";
 import { Item } from "./Item";
-import { getWeapon, getWeapons } from "./Weapon";
+import { getWeapon, getWeaponReforge, getWeapons, Weapon } from "./Weapon";
 import { getPotions } from "./Potion";
 import { getArmors } from "./Armor";
 import { getMaterials } from "./Material";
@@ -32,7 +32,8 @@ export class Player extends Entity {
   weaponsId: string[] = [];
   potionsId: string[] = [];
   equippedWeapons?: string;
-  equippedArmors: string[] = [];
+  weaponReforge?: string;
+  equippedArmorsId: string[] = [];
   floor = 1;
   phase = 1;
   redRoomPassed = 0;
@@ -86,7 +87,7 @@ export class Player extends Entity {
     this.weaponsId = [];
     this.potionsId = [];
     this.equippedWeapons = undefined;
-    this.equippedArmors = [];
+    this.equippedArmorsId = [];
     this.floor = 1;
     this.phase = 1;
     this.redRoomPassed = 0;
@@ -97,7 +98,7 @@ export class Player extends Entity {
   }
 
   get armorSet() {
-    const armors = getArmors(this.equippedArmors);
+    const armors = this.equippedArmors;
     const head = armors.find((x) => x.type === "head");
     const chest = armors.find((x) => x.type === "chest");
     const leggings = armors.find((x) => x.type === "leggings");
@@ -200,12 +201,25 @@ export class Player extends Entity {
   weapon() {
     if (!this.equippedWeapons) return;
 
-    const weapon = getWeapon(this.equippedWeapons);
+    const weapon = { ...getWeapon(this.equippedWeapons) } as Weapon;
 
     if (!weapon) {
       throw new CommandError(`\`⚠️\` No item found`);
     } else if (weapon.atk === 0) {
       throw new CommandError("`⚠️` Item is not a weapon");
+    }
+
+    if (this.weaponReforge) {
+      const reforge = getWeaponReforge(this.weaponReforge);
+
+      if (!reforge) {
+        return weapon;
+      }
+
+      weapon.name = `${reforge.name} ${weapon.name}`;
+      weapon.atk += reforge.atk;
+      weapon.crit += reforge.crit;
+      weapon.critChance += reforge.critChance;
     }
 
     return weapon;
@@ -299,19 +313,19 @@ export class Player extends Entity {
   }
 
   get defence() {
-    return this.armors.reduce((acc, armor) => acc + armor.defence, 0);
+    return this.equippedArmors.reduce((acc, armor) => acc + armor.defence, 0);
   }
 
   get defenceChance() {
-    return this.armors.reduce((acc, armor) => acc + armor.defenceChance, 0);
+    return this.equippedArmors.reduce((acc, armor) => acc + armor.defenceChance, 0);
   }
 
   get crit() {
-    return this.weapons.reduce((acc, weapon) => acc + weapon.crit, 0);
+    return this.weapon()?.crit || 0;
   }
 
   get critChance() {
-    return this.weapons.reduce((acc, weapon) => acc + weapon.critChance, 0);
+    return this.weapon()?.critChance || 0;
   }
 
   get potions() {
@@ -328,5 +342,9 @@ export class Player extends Entity {
 
   get armors() {
     return getArmors(this.armorsId);
+  }
+
+  get equippedArmors() {
+    return getArmors(this.equippedArmorsId);
   }
 }

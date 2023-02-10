@@ -44,9 +44,11 @@ const presenceData: PresenceData = {
 };
 
 client.on("ready", async () => {
-client.user?.setPresence(presenceData);
-client.user?.setActivity("over Wyvern", { type: ActivityType.Watching });
-  
+  client.user?.setPresence(presenceData);
+  client.user?.setActivity("over Caramel Iced Latte", {
+    type: ActivityType.Watching,
+  });
+
   commandManager.registerCommands(path.resolve(__dirname, "./commands"));
   console.log(client.user!.username, "is ready!");
 

@@ -37,7 +37,6 @@ export default class extends Command {
   cooldown = process.env.ENV === "DEV" ? time.SECOND : time.MINUTE / 3;
   blueRoomChance = process.env.ENV === "DEV" ? 1 : 0.5;
   whiteRoomChance = 0.25;
-  greenRoomChance = 0.25;
 
   async battle(i: CommandInteraction) {
     const player = await Player.load(i.user.id);
@@ -46,43 +45,6 @@ export default class extends Command {
     const monster = isBoss
       ? Monster.randomBoss(player.floor)
       : Monster.random(player.floor, player.phase);
-    const battle = new Battle(i, player, monster);
-    const role = await client.getRole(client.settings.roleId);
-    const memberRoles = i.member?.roles as GuildMemberRoleManager;
-
-    await memberRoles.add(role);
-    await battle.start();
-
-    // checks if player starts first
-    const moveFirst = random.bool();
-
-    if (moveFirst) {
-      battle.round++;
-      battle.isReady = true;
-      await battle.save();
-
-      await battle.editReply(battle.turnMessage());
-      await battle.sleep();
-    } else {
-      battle.isReady = false;
-      await battle.save();
-
-      const embed = await battle.handleMonsterAttack();
-      await battle.editReply(embed);
-      await battle.sleep();
-      await battle.handleDead();
-
-      battle.round++;
-      battle.isReady = true;
-      await battle.save();
-
-      await battle.editReply(battle.turnMessage());
-    }
-  }
-
-  async handleGreenRoom(i: CommandInteraction) {
-    const player = await Player.load(i.user.id);
-    const monster = Monster.randomSpecial(player.floor);
     const battle = new Battle(i, player, monster);
     const role = await client.getRole(client.settings.roleId);
     const memberRoles = i.member?.roles as GuildMemberRoleManager;
@@ -173,7 +135,7 @@ export default class extends Command {
               lines.push("> Materials: " + materials.join());
             }
 
-            lines.push(`> Price: **$${item.price} Coins**`);
+            lines.push(`> Price: **$${item.price} Mora**`);
 
             return lines.filter((x) => !!x).join("\n");
           })
@@ -212,7 +174,7 @@ export default class extends Command {
 
       if (player.coins < selectedItem.price) {
         await message.edit({
-          content: `\`⚠️\` Insufficient coins`,
+          content: `\`⚠️\` Insufficient Mora`,
           components: [],
           embeds: [],
         });
@@ -351,12 +313,6 @@ export default class extends Command {
       });
     }
 
-    if (random.bool(this.greenRoomChance)) {
-      buttonHandler.addButton("Green Room", () => {
-        room = "green";
-      });
-    }
-
     await buttonHandler.run();
 
     switch (room) {
@@ -368,9 +324,6 @@ export default class extends Command {
         break;
       case "blue":
         await this.handleBlueRoom(i);
-        break;
-      case "green":
-        await this.handleGreenRoom(i);
         break;
     }
   }

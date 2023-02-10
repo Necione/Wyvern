@@ -36,6 +36,11 @@ export class Client extends DiscordClient {
     provider,
   });
 
+  reforgedWeapons = new Josh({
+    name: "reforged_weapons",
+    provider,
+  });
+
   settings = {
     channelId: settingsData.channelId,
     roleId: settingsData.roleId,

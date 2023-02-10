@@ -1,16 +1,23 @@
 [
   {
-    "id": "chainmail",
-    "name": "Chainmail",
-    "price": 5,
-    "desc": "It's made of chains",
+    "id": "cor_lapis",
+    "name": "Cor Lapis",
+    "price": 10,
+    "desc": "A precious crystal of condensed pure Geo element.",
     "trader": true
   },
   {
-    "id": "adamantine",
-    "name": "Adamantine",
-    "price": 50,
-    "desc": "Pricey!",
+    "id": "noctilucous_jade",
+    "name": "Noctilucous Jade",
+    "price": 10,
+    "desc": "A rare mineral that glimmers in the dark.",
+    "trader": true
+  },
+  {
+    "id": "star_silver",
+    "name": "Star Silver",
+    "price": 10,
+    "desc": "A rare and precious ore formed by the unique geographical conditions of Dragonspine.",
     "trader": true
   }
 ]

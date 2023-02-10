@@ -1,72 +1,86 @@
 [
   {
+    "id": "slime_condensate",
+    "name": "Slime Condensate",
+    "price": 5,
+    "desc": "A thick coating found on slimes. Most commonly seen material in elemental workshops.",
+    "hidden": true
+  },
+  {
+    "id": "slime_secretions",
+    "name": "Slime Secretions",
+    "price": 10,
+    "desc": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure.",
+    "hidden": true
+  },
+  {
+    "id": "slime_concentrate",
+    "name": "Slime Concentrate",
+    "price": 15,
+    "desc": "Concentrated slime essence. When left alone, it will begin to move on its own.",
+    "hidden": true
+  },
+  {
+    "id": "damaged_mask",
+    "name": "Damaged Mask",
+    "price": 5,
+    "desc": "A broken bone mask that once belonged to some hilichurl.",
+    "hidden": true
+  },
+  {
+    "id": "stained_mask",
+    "name": "Stained Mask",
+    "price": 10,
+    "desc": "A bone mask covered in unidentifiable stains, that emanates a mysterious odor.",
+    "hidden": true
+  },
+  {
+    "id": "onimous_mask",
+    "name": "Onimous Mask",
+    "price": 15,
+    "desc": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.",
+    "hidden": true
+  },
+  {
+    "id": "chaos_device",
+    "name": "Chaos Device",
+    "price": 5,
+    "desc": "Comes from ancient defunct relic structures",
+    "hidden": true
+  },
+  {
+    "id": "chaos_circuit",
+    "name": "Chaos Circuit",
+    "price": 10,
+    "desc": "Comes from ancient defunct relic structures",
+    "hidden": true
+  },
+  {
+    "id": "chaos_core",
+    "name": "Chaos Core",
+    "price": 15,
+    "desc": "Comes from ancient defunct relic structures",
+    "hidden": true
+  },
+  {
     "id": "rock",
     "name": "Rock",
-    "price": 0,
-    "desc": "Just a simple, sharp rock.",
+    "price": 5,
+    "desc": "Your common... everyday rock!",
     "hidden": true
   },
   {
-    "id": "ruby",
-    "name": "Ruby",
-    "price": 30,
-    "desc": "A strange, red rock...",
+    "id": "iron_chunk",
+    "name": "Iron Chunk",
+    "price": 5,
+    "desc": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman.",
     "hidden": true
   },
   {
-    "id": "snake_hide",
-    "name": "Snake Hide",
-    "price": 10,
-    "desc": "Tough!",
-    "hidden": true
-  },
-  {
-    "id": "scorpion_arm",
-    "name": "Scorpion Arm",
-    "price": 20,
-    "desc": "Crab arm lmao",
-    "hidden": true
-  },
-  {
-    "id": "scale",
-    "name": "Scale",
-    "price": 25,
-    "desc": "It looks pretty weird.",
-    "hidden": true
-  },
-  {
-    "id": "crawler_heart",
-    "name": "Crawler Heart",
-    "price": 10,
-    "desc": "It's still beating...",
-    "hidden": true
-  },
-  {
-    "id": "icicle",
-    "name": "Icicle",
-    "price": 10,
-    "desc": "It's very cold lmao.",
-    "hidden": true
-  },
-  {
-    "id": "huge_eye",
-    "name": "Huge Eye",
-    "price": 0,
-    "desc": "It's staring right at you...",
-    "hidden": true
-  },
-  {
-    "id": "hydra_heart",
-    "name": "Hydra Heart",
-    "price": 30,
-    "desc": "Squishy.",
-    "hidden": true
-  },
-  {
-    "id": "honey",
-    "name": "Honey",
-    "price": 0,
-    "desc": "Aren't those from bees?",
+    "id": "crystal_chunk",
+    "name": "Crystal Chunk",
+    "price": 5,
+    "desc": "An uncut crystal. Only professional craftsmanship can bring out its true value.",
     "hidden": true
   }
 ]

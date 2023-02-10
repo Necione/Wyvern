@@ -3,7 +3,7 @@ import { Command, CommandError } from "@jiman24/slash-commandment";
 import { CommandInteraction, EmbedBuilder } from "discord.js";
 import { BLUE } from "../constants";
 import { isValidChannel } from "../execs/preExecs";
-import { getArmor, getArmors, isArmor } from "../structure/Armor";
+import { getArmor, isArmor } from "../structure/Armor";
 import { Player } from "../structure/Player";
 import { getWeapon, isWeapon } from "../structure/Weapon";
 
@@ -35,15 +35,15 @@ export default class extends Command {
 
     if (isArmor(item)) {
       // gets the armor
-      const equippedArmor = getArmors(player.equippedArmors).find(
+      const equippedArmor = player.equippedArmors.find(
         (x) => x.type === item.type
       );
 
       if (equippedArmor) {
-        player.equippedArmors = remove(equippedArmor.id, player.equippedArmors);
+        player.equippedArmorsId = remove(equippedArmor.id, player.equippedArmorsId);
       }
 
-      player.equippedArmors.push(item.id);
+      player.equippedArmorsId.push(item.id);
     } else if (isWeapon(item)) {
       player.equippedWeapons = item.id;
     }

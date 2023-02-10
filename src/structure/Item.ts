@@ -37,9 +37,12 @@ export function showStat<T extends Item>(item: T) {
       //@ts-ignore
       lines.push(`> + \`${SWORD} ${item.atk} ATK\` when equipped`);
       //@ts-ignore
-      lines.push(`> + \`${EXPLOSION} ${formatPercent(item.crit)} Crit\` when equipped`);
-      //@ts-ignore
-      lines.push(`> + \`${EXPLOSION} ${formatPercent(item.critChance)} Crit %\` when equipped`);
+      if (item.crit !== 0 && item.critChance !== 0) {
+        //@ts-ignore
+        lines.push(`> + \`${EXPLOSION} ${formatPercent(item.crit)} Crit\` when equipped`);
+        //@ts-ignore
+        lines.push(`> + \`${EXPLOSION} ${formatPercent(item.critChance)} Crit %\` when equipped`);
+      }
       break;
     case "potion":
           //@ts-ignore
@@ -63,6 +66,7 @@ export function showStat<T extends Item>(item: T) {
       lines.push(`> + \`${SHIELD} ${formatPercent(item.defenceChance)} DEF %\` when equipped`);
       break;
   }
+
 
   return lines.join("\n");
 }

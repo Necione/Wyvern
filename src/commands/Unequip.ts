@@ -35,12 +35,12 @@ export default class extends Command {
 
     if (isArmor(item)) {
       // gets the armor
-      const equippedArmor = getArmors(player.equippedArmors).find(
+      const equippedArmor = player.equippedArmors.find(
         (x) => x.type === item.type
       );
 
       if (equippedArmor) {
-        player.equippedArmors = remove(equippedArmor.id, player.equippedArmors);
+        player.equippedArmorsId = remove(equippedArmor.id, player.equippedArmorsId);
       }
     } else if (isWeapon(item)) {
       player.equippedWeapons = "";

@@ -11,13 +11,6 @@ const monstersData = [...floor1Data, ...floor2Data];
 //Pulling boss data
 const bossesData = getData<MonsterData>("content", "monsters", "boss.json");
 
-//Pulling specials data
-const specialsData = getData<MonsterData>(
-  "content",
-  "monsters",
-  "special.json"
-);
-
 export type DropUnit = Unit & { dropChance: number };
 
 export interface MonsterData {
@@ -40,7 +33,6 @@ export interface MonsterData {
   coins: number;
   drop: DropUnit[];
   isBoss?: boolean;
-  isSpecial?: boolean;
 }
 
 export class Monster extends Entity {
@@ -51,7 +43,6 @@ export class Monster extends Entity {
   coins: number;
   drop: DropUnit[];
   isBoss?: boolean;
-  isSpecial?: boolean;
   fleeChance: number;
   missChance: number;
   playerMissChance: number;
@@ -80,7 +71,6 @@ export class Monster extends Entity {
     this.missChance = data.missChance;
     this.playerMissChance = data.playerMissChance;
     this.isBoss = data.isBoss;
-    this.isSpecial = data.isSpecial;
   }
 
   attack() {
@@ -104,23 +94,9 @@ export class Monster extends Entity {
       .map((x) => new Monster(x));
   }
 
-  static get specials() {
-    return specialsData
-      .map((x) => {
-        x.isSpecial = true;
-        return x;
-      })
-      .map((x) => new Monster(x));
-  }
-
   static randomBoss(floor: number) {
     const bosses = Monster.bosses.filter((x) => x.floor === floor);
     return random.pick(bosses);
-  }
-
-  static randomSpecial(floor: number) {
-    const specials = Monster.specials.filter((x) => x.floor === floor);
-    return random.pick(specials);
   }
 
   static random(floor: number, phase: number) {

@@ -1,135 +1,69 @@
 [
   {
-    "id": "wooden_dagger",
-    "name": "Wooden Dagger",
-    "desc": "A simple, yet sharp wooden dagger.",
+    "id": "dull_blade",
+    "name": "Dull Blade",
+    "desc": "Travels are full of meetings and partings.",
     "atk": 2,
-    "crit": 1.3,
-    "critChance": 0.2,
+    "crit": 0,
+    "critChance": 0,
     "heal": 0,
     "price": 10,
     "materials": [
       {
-        "id": "rock",
-        "amount": 4
-      }
-    ]
-  },
-  {
-    "id": "longsword",
-    "name": "Long Sword",
-    "desc": "A very long sword",
-    "atk": 3.5,
-    "crit": 1.3,
-    "critChance": 0.2,
-    "heal": 0,
-    "price": 25,
-    "materials": [
-      {
-        "id": "rock",
-        "amount": 8
+        "id": "iron_chunk",
+        "amount": 3
       },
       {
-        "id": "string",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "rapier",
-    "name": "Rapier",
-    "desc": "A slender, two-edged blade.",
-    "atk": 4,
-    "crit": 1.3,
-    "critChance": 0.2,
-    "heal": 0,
-    "price": 25,
-    "materials": [
-      {
         "id": "rock",
-        "amount": 15
-      },
-      {
-        "id": "sharp_tooth",
         "amount": 2
       }
     ]
   },
   {
-    "id": "scorpion_falcion",
-    "name": "Scorpion Falcion",
-    "desc": "Pretty red ngl.",
+    "id": "silver_sword",
+    "name": "Silver Sword",
+    "desc": "It is the pure heart of the wandering exorcist that is the true bane of evil.",
+    "atk": 3.5,
+    "crit": 1.1,
+    "critChance": 0.05,
+    "heal": 0,
+    "price": 15,
+    "materials": [
+      {
+        "id": "iron_chunk",
+        "amount": 2
+      },
+      {
+        "id": "stained_mask",
+        "amount": 1
+      },
+      {
+        "id": "crystal_chunk",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "ferrous_shadow",
+    "name": "Ferrous Shadow",
+    "desc": "A replica of the Lion of Light's greatsword",
     "atk": 4,
-    "crit": 1.75,
+    "crit": 1.12,
     "critChance": 0.1,
     "heal": 0,
-    "price": 30,
+    "price": 25,
     "materials": [
       {
-        "id": "scorpion_arm",
+        "id": "onimous_mask",
         "amount": 1
       },
       {
-        "id": "ruby",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "frosted_dagger",
-    "name": "Frosted Dagger",
-    "desc": "It's really cold for some reason",
-    "atk": 4.5,
-    "crit": 1.2,
-    "critChance": 0.2,
-    "heal": 0,
-    "price": 40,
-    "materials": [
-      {
-        "id": "rock",
-        "amount": 5
-      },
-      {
-        "id": "icicle",
-        "amount": 2
-      }
-    ]
-  },
-  {
-    "id": "iron_dagger",
-    "name": "Iron Dagger",
-    "desc": "A simple, yet sharp iron dagger",
-    "atk": 3.5,
-    "crit": 1.2,
-    "critChance": 0.25,
-    "heal": 0,
-    "price": 10,
-    "trader": true,
-    "materials": [
-      {
-        "id": "rock",
-        "amount": 7
-      }
-    ]
-  },
-  {
-    "id": "bloody_dagger",
-    "name": "Bloody Dagger",
-    "desc": "It looks like a wooden dagger.",
-    "atk": 2,
-    "crit": 5,
-    "critChance": 0.25,
-    "heal": 0,
-    "price": 10,
-    "trader": true,
-    "materials": [
-      {
-        "id": "huge_eye",
+        "id": "chaos_device",
         "amount": 2
       },
       {
-        "id": "crawler_heart",
-        "amount": 1
+        "id": "crystal_chunk",
+        "amount": 2
       }
     ]
   }

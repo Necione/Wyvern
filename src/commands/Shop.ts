@@ -87,7 +87,7 @@ export default class extends Command {
             lines.push("> Materials: " + materials.join());
           }
 
-          lines.push(`> Price: **$${item.price} Coins**`);
+          lines.push(`> Price: **$${item.price} Mora**`);
 
           return lines.filter((x) => !!x).join("\n");
         })

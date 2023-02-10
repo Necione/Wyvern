@@ -1,24 +1,24 @@
 [
   {
-    "id": "leather_helm",
-    "name": "Leather Helmet",
-    "desc": "Leather based helmet",
-    "price": 10,
+    "id": "adventurers_helmet",
+    "name": "Adventurer's Helmet",
+    "desc": "Common helmet found in Teyvat shops!",
+    "price": 15,
     "type": "head",
     "hp": 5,
     "defence": 5,
     "defenceChance": 0.05,
     "materials": [
       {
-        "id": "leather",
+        "id": "damaged_mask",
         "amount": 2
       }
     ]
   },
   {
-    "id": "leather_chestplate",
-    "name": "Leather Chestplate",
-    "desc": "Leather based chestplate",
+    "id": "adventurers_chestplate",
+    "name": "Adventurer's Chestplate",
+    "desc": "Common chestplate found in Teyvat shops!",
     "price": 30,
     "type": "chest",
     "hp": 10,
@@ -26,15 +26,19 @@
     "defenceChance": 0.1,
     "materials": [
       {
-        "id": "leather",
-        "amount": 4
+        "id": "damaged_mask",
+        "amount": 3
+      },
+      {
+        "id": "stained_mask",
+        "amount": 2
       }
     ]
   },
   {
-    "id": "leather_leggings",
-    "name": "Leather Leggings",
-    "desc": "Leather based leggings",
+    "id": "adventurers_leggings",
+    "name": "Adventurer's Leggings",
+    "desc": "Common leggings found in Teyvat shops!",
     "price": 25,
     "type": "leggings",
     "hp": 7.5,
@@ -42,15 +46,19 @@
     "defenceChance": 0.075,
     "materials": [
       {
-        "id": "leather",
-        "amount": 3
+        "id": "damaged_mask",
+        "amount": 2
+      },
+      {
+        "id": "stained_mask",
+        "amount": 1
       }
     ]
   },
   {
-    "id": "leather_boots",
-    "name": "Leather Boots",
-    "desc": "Leather based boots",
+    "id": "adventurers_boots",
+    "name": "Adventurer's Boots",
+    "desc": "Common boots found in Teyvat shops!",
     "price": 5,
     "type": "boots",
     "hp": 2,
@@ -58,108 +66,8 @@
     "defenceChance": 0.025,
     "materials": [
       {
-        "id": "leather",
+        "id": "damaged_mask",
         "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "chain_helm",
-    "name": "Chainmail Helmet",
-    "desc": "Chainmail based helmet",
-    "price": 20,
-    "type": "head",
-    "hp": 7.5,
-    "defence": 7.5,
-    "defenceChance": 0.05,
-    "materials": [
-      {
-        "id": "chainmail",
-        "amount": 2
-      },
-      {
-        "id": "rock",
-        "amount": 5
-      }
-    ]
-  },
-  {
-    "id": "chain_chestplate",
-    "name": "Chainmail Chestplate",
-    "desc": "Chainmail based chestplate",
-    "price": 45,
-    "type": "chest",
-    "hp": 15,
-    "defence": 12.5,
-    "defenceChance": 0.15,
-    "materials": [
-      {
-        "id": "chainmail",
-        "amount": 4
-      },
-      {
-        "id": "rock",
-        "amount": 10
-      }
-    ]
-  },
-  {
-    "id": "chain_leggings",
-    "name": "Chainmail Leggings",
-    "desc": "Chainmail based leggings",
-    "price": 30,
-    "type": "leggings",
-    "hp": 9,
-    "defence": 9.5,
-    "defenceChance": 0.05,
-    "materials": [
-      {
-        "id": "chainmail",
-        "amount": 3
-      },
-      {
-        "id": "rock",
-        "amount": 7
-      }
-    ]
-  },
-  {
-    "id": "chain_boots",
-    "name": "Chainmail Boots",
-    "desc": "Chainmail based boots",
-    "price": 20,
-    "type": "boots",
-    "hp": 9,
-    "defence": 9.5,
-    "defenceChance": 0.05,
-    "materials": [
-      {
-        "id": "chainmail",
-        "amount": 1
-      },
-      {
-        "id": "rock",
-        "amount": 3
-      }
-    ]
-  },
-  {
-    "id": "crawler_helm",
-    "name": "Crawler Helmet",
-    "desc": "It's made out of crawler skin",
-    "price": 20,
-    "type": "head",
-    "hp": 10,
-    "defence": 0,
-    "defenceChance": 0.0,
-    "materials": [
-      {
-        "id": "crawler_skin",
-        "amount": 3
-      },
-      {
-        "id": "rock",
-        "amount": 10
       }
     ]
   }

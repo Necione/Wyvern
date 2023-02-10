@@ -8,8 +8,8 @@
     "price": 10,
     "materials": [
       {
-        "id": "crystal",
-        "amount": 2
+        "id": "slime_condensate",
+        "amount": 3
       }
     ]
   },
@@ -22,8 +22,8 @@
     "price": 10,
     "materials": [
       {
-        "id": "crystal",
-        "amount": 1
+        "id": "slime_condensate",
+        "amount": 2
       }
     ]
   },
@@ -34,11 +34,10 @@
     "heal": 25,
     "energy": 0,
     "price": 15,
-    "trader": true,
     "materials": [
       {
-        "id": "crystal",
-        "amount": 1
+        "id": "slime_secretions",
+        "amount": 2
       }
     ]
   },
