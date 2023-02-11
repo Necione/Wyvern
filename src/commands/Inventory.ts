@@ -3,13 +3,12 @@ import { Command, CommandError } from "@jiman24/slash-commandment";
 import { CommandInteraction, EmbedBuilder } from "discord.js";
 import { Pagination } from "@jiman24/discordjs-pagination";
 import { Player } from "../structure/Player";
-import { isValidChannel } from "../execs/preExecs";
 import { isWeapon } from "../structure/Weapon";
+import { client } from "..";
 
 export default class extends Command {
   name = "inventory";
   description = "Check your inventory";
-  preExec = [isValidChannel];
 
   async exec(i: CommandInteraction) {
     await i.deferReply();
@@ -24,7 +23,7 @@ export default class extends Command {
     await i.editReply("\u200b");
 
     const aggregatedItems = aggregateById(items);
-    const pages = chunk([...aggregatedItems.values()], 5);
+    const pages = chunk([...aggregatedItems.values()], 10);
 
     const pagesEmbed = pages.map((page) => {
       const content = page
@@ -40,14 +39,16 @@ export default class extends Command {
             name = player.weapon()!.name;
           }
 
-          return `\`${x.count}x\` ${name} (ID: ${item.id})\n> ${item.desc}`;
+          return `\`${x.count}x\` ${name} (ID: ${item.id})`;
         })
-        .join("\n\n");
+        .join("\n");
 
       const embed = new EmbedBuilder()
         .setTitle(`${i.user.username}#${i.user.discriminator}'s inventory:`)
         .setColor("Random")
-        .setDescription(`Mora: __${bold(player.coins)}__\n${content}`);
+        .setDescription(
+          `<:mora:1073793987829309562> **Mora:** ${player.coins}\n${content}`
+        );
 
       return embed;
     });
