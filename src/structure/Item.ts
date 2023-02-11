@@ -5,7 +5,6 @@ import { formatPercent } from "@jiman24/discordjs-utils";
 export interface Item {
   id: string;
   name: string;
-  desc: string;
   price: number;
   trader?: boolean;
   hidden?: boolean;
@@ -37,6 +36,8 @@ export function showStat<T extends Item>(item: T) {
       //@ts-ignore
       lines.push(`> + \`${SWORD} ${item.atk} ATK\` when equipped`);
       //@ts-ignore
+      lines.push(`> + \`📜 Better against ${item.specialty}s\``);
+      //@ts-ignore
       if (item.crit !== 0 && item.critChance !== 0) {
         //@ts-ignore
         lines.push(`> + \`${EXPLOSION} ${formatPercent(item.crit)} Crit\` when equipped`);
@@ -44,7 +45,7 @@ export function showStat<T extends Item>(item: T) {
         lines.push(`> + \`${EXPLOSION} ${formatPercent(item.critChance)} Crit %\` when equipped`);
       }
       break;
-    case "potion":
+    case "consumable":
           //@ts-ignore
         if (item.heal !== 0) {
           //@ts-ignore

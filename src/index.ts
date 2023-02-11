@@ -10,7 +10,12 @@ import { TextChannel, PresenceData, ActivityType } from "discord.js";
 import { Battle } from "./structure/Battle";
 
 export const client = new Client({
-  intents: ["GuildMessages", "Guilds", "GuildMembers"],
+  intents: [
+    "GuildMessages",
+    "Guilds",
+    "GuildMembers",
+    "GuildEmojisAndStickers",
+  ],
 });
 
 export const commandManager = new CommandManager({
@@ -52,26 +57,10 @@ client.on("ready", async () => {
   commandManager.registerCommands(path.resolve(__dirname, "./commands"));
   console.log(client.user!.username, "is ready!");
 
-  const roleId = client.settings.roleId as string;
   const guildId = client.settings.guildId as string;
   const guild = await client.guilds.fetch(guildId);
 
   if (!guild) throw new CommandError(`Cannot find guild "${guildId}"`);
-
-  const role = await guild.roles.fetch(roleId);
-
-  if (!role) throw new CommandError(`cannot find role "${roleId}"`);
-
-  for (const channel of client.channels.cache.values()) {
-    if (channel.id === client.settings.channelId) continue;
-    if (channel.isThread()) continue;
-
-    if (channel instanceof TextChannel) {
-      channel.permissionOverwrites
-        .create(role, { ViewChannel: false })
-        .catch(() => {});
-    }
-  }
 });
 
 client.on("interactionCreate", async (i) => {

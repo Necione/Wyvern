@@ -11,12 +11,13 @@ const monstersData = [...floor1Data, ...floor2Data];
 //Pulling boss data
 const bossesData = getData<MonsterData>("content", "monsters", "boss.json");
 
-export type DropUnit = Unit & { dropChance: number };
+export type DropUnit = Unit & { dropChance: number } & { min: number } & {
+  max: number;
+};
 
 export interface MonsterData {
   id: string;
   name: string;
-  desc: string;
   thumbnailUrl: string;
   floor: number;
   phase: number;
@@ -33,10 +34,10 @@ export interface MonsterData {
   coins: number;
   drop: DropUnit[];
   isBoss?: boolean;
+  type: string;
 }
 
 export class Monster extends Entity {
-  description: string;
   thumbnailUrl: string;
   floor: number;
   phase: number;
@@ -52,10 +53,10 @@ export class Monster extends Entity {
   defenceChance: number;
   minXp: number;
   maxXp: number;
+  type: string;
 
   constructor(data: MonsterData) {
     super(data.id, data.name, data.hp);
-    this.description = data.desc;
     this.thumbnailUrl = data.thumbnailUrl;
     this.floor = data.floor;
     this.phase = data.phase;
@@ -71,6 +72,7 @@ export class Monster extends Entity {
     this.missChance = data.missChance;
     this.playerMissChance = data.playerMissChance;
     this.isBoss = data.isBoss;
+    this.type = data.type;
   }
 
   attack() {

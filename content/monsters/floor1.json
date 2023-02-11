@@ -2,13 +2,13 @@
   {
     "id": "hilichurl1",
     "name": "[ Lv1 ] Hilichurl",
-    "desc": "The primitive wandering inhabitants of Teyvat's wildernesses.",
     "thumbnailUrl": "https://file.coffee/u/NijxJxBiDAF9-0tCGXRY_.webp",
     "floor": 1,
     "phase": 1,
+    "type": "Hilichurl",
     "hp": 15,
-    "defence": 1,
-    "defenceChance": 0.1,
+    "defence": 0,
+    "defenceChance": 0,
     "minAtk": 1,
     "maxAtk": 3,
     "minXp": 1,
@@ -20,22 +20,26 @@
     "drop": [
       {
         "id": "damaged_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
       },
       {
         "id": "stained_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.25
       },
       {
         "id": "onimous_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       },
       {
         "id": "rock",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
       }
     ]
@@ -43,13 +47,13 @@
   {
     "id": "anemo_slime1",
     "name": "[ Lv1 ] Anemo Slime",
-    "desc": "It is able to float in the air due to the power of Anemo.",
     "thumbnailUrl": "https://file.coffee/u/b_adw8hj83cozmujBCzN3.webp",
     "floor": 1,
     "phase": 1,
+    "type": "Slime",
     "hp": 12.5,
-    "defence": 2,
-    "defenceChance": 0.1,
+    "defence": 0,
+    "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
     "minXp": 4,
@@ -61,17 +65,20 @@
     "drop": [
       {
         "id": "slime_condensate",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
       },
       {
         "id": "slime_secretions",
-        "amount": 1,
-        "dropChance": 0.25
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.1
       },
       {
         "id": "slime_concentrate",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       }
     ]
@@ -79,13 +86,13 @@
   {
     "id": "electro_slime1",
     "name": "[ Lv1 ] Electro Slime",
-    "desc": "A small monster created by the coalescing of Electro dispersed throughout nature.",
     "thumbnailUrl": "https://file.coffee/u/taZCEULrUqzITwGfjaP5z.webp",
     "floor": 1,
     "phase": 1,
+    "type": "Slime",
     "hp": 17,
-    "defence": 4,
-    "defenceChance": 0.35,
+    "defence": 0,
+    "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
     "minXp": 1,
@@ -97,17 +104,20 @@
     "drop": [
       {
         "id": "slime_condensate",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
       },
       {
         "id": "slime_secretions",
-        "amount": 1,
-        "dropChance": 0.25
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.1
       },
       {
         "id": "slime_concentrate",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       }
     ]
@@ -115,13 +125,13 @@
   {
     "id": "cryo_hilichurl1",
     "name": "[ Lv1 ] Cryo Hilichurl",
-    "desc": "The primitive wandering inhabitants of Teyvat's wildernesses.",
     "thumbnailUrl": "https://file.coffee/u/YFaV8RL0F4BOevcZOCNMB.webp",
     "floor": 1,
     "phase": 1,
+    "type": "Hilichurl",
     "hp": 17,
-    "defence": 4,
-    "defenceChance": 0.15,
+    "defence": 0,
+    "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
     "minXp": 1,
@@ -133,22 +143,26 @@
     "drop": [
       {
         "id": "damaged_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.75
       },
       {
         "id": "stained_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.25
       },
       {
         "id": "onimous_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       },
       {
         "id": "rock",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
       }
     ]
@@ -156,17 +170,17 @@
   {
     "id": "mitachurl1",
     "name": "[ Lv1 ] Mitachurl",
-    "desc": "Muscular hilichurls who wield large two-handed axes.",
     "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
     "floor": 1,
     "phase": 2,
-    "hp": 17,
+    "type": "Hilichurl",
+    "hp": 20,
     "defence": 8,
     "defenceChance": 0.2,
     "minAtk": 2,
     "maxAtk": 3,
-    "minXp": 1,
-    "maxXp": 5,
+    "minXp": 3,
+    "maxXp": 6,
     "missChance": 0.15,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
@@ -174,33 +188,76 @@
     "drop": [
       {
         "id": "damaged_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.75
       },
       {
         "id": "stained_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.25
       },
       {
         "id": "onimous_mask",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       },
       {
         "id": "rock",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.9
+      }
+    ]
+  },
+  {
+    "id": "treasure_hoarder1",
+    "name": "[ Lv1 ] Treasure Hoarder",
+    "thumbnailUrl": "https://file.coffee/u/IUzAPzaNRec66VsiqqzEL.webp",
+    "floor": 1,
+    "phase": 2,
+    "type": "Treasure Hoarder",
+    "hp": 17,
+    "defence": 3,
+    "defenceChance": 0.1,
+    "minAtk": 1,
+    "maxAtk": 4,
+    "minXp": 3,
+    "maxXp": 6,
+    "missChance": 0.15,
+    "playerMissChance": 0.15,
+    "fleeChance": 0.25,
+    "coins": 5,
+    "drop": [
+      {
+        "id": "treasure_hoarder_insignia",
+        "min": 1,
+        "max": 3,
+        "dropChance": 0.75
+      },
+      {
+        "id": "silver_raven_insignia",
+        "min": 1,
+        "max": 3,
+        "dropChance": 0.25
+      },
+      {
+        "id": "golden_raven_insignia",
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.05
       }
     ]
   },
   {
     "id": "ruin_guard1",
     "name": "[ Lv1 ] Ruin Guard",
-    "desc": "An ancient humanoid war machine.",
     "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
     "floor": 1,
     "phase": 3,
+    "type": "Machine",
     "hp": 25,
     "defence": 10,
     "defenceChance": 0.4,
@@ -215,17 +272,20 @@
     "drop": [
       {
         "id": "chaos_device",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.75
       },
       {
         "id": "chaos_circuit",
-        "amount": 1,
+        "min": 1,
+        "max": 3,
         "dropChance": 0.25
       },
       {
         "id": "chaos_core",
-        "amount": 1,
+        "min": 1,
+        "max": 2,
         "dropChance": 0.05
       }
     ]

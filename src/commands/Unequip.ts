@@ -40,7 +40,10 @@ export default class extends Command {
       );
 
       if (equippedArmor) {
-        player.equippedArmorsId = remove(equippedArmor.id, player.equippedArmorsId);
+        player.equippedArmorsId = remove(
+          equippedArmor.id,
+          player.equippedArmorsId
+        );
       }
     } else if (isWeapon(item)) {
       player.equippedWeapons = "";

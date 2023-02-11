@@ -4,20 +4,31 @@
     "name": "Spicy",
     "atk": 1.5,
     "crit": 0,
-    "critChance": 0.2
+    "critChance": 0.2,
+    "hp": 0
   },
   {
     "id": "sharp",
     "name": "Sharp",
     "atk": 3,
     "crit": 0,
-    "critChance": 0
+    "critChance": 0,
+    "hp": 0
   },
   {
     "id": "ruthless",
     "name": "Ruthless",
     "atk": 1,
     "crit": 1.3,
-    "critChance": 0.05
+    "critChance": 0.05,
+    "hp": 0
+  },
+  {
+    "id": "healthy",
+    "name": "Healthy",
+    "atk": 0,
+    "crit": 0,
+    "critChance": 0,
+    "hp": 10
   }
 ]

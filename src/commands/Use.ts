@@ -4,7 +4,7 @@ import { CommandInteraction, EmbedBuilder } from "discord.js";
 import { client } from "..";
 import { HEART, LIGHTNING } from "../constants";
 import { Player } from "../structure/Player";
-import { isPotion } from "../structure/Potion";
+import { isConsumable } from "../structure/Consumable";
 
 export default class extends Command {
   name = "use";
@@ -38,12 +38,12 @@ export default class extends Command {
 
     const embed = new EmbedBuilder().setColor("Random");
 
-    if (isPotion(item)) {
+    if (isConsumable(item)) {
       if (player.hp >= player.maxHP) {
         throw new CommandError(`\`⚠️\` Your \`${HEART} HP\` is already full`);
       }
 
-      player.potionsId = remove(item.id, player.potionsId);
+      player.consumablesId = remove(item.id, player.consumablesId);
       player.hp += item.heal;
       player.energy += item.energy;
       await player.save();

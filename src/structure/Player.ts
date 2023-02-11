@@ -15,7 +15,7 @@ import { Entity } from "./Entity";
 import { User } from "discord.js";
 import { Item } from "./Item";
 import { getWeapon, getWeaponReforge, getWeapons, Weapon } from "./Weapon";
-import { getPotions } from "./Potion";
+import { getConsumables } from "./Consumable";
 import { getArmors } from "./Armor";
 import { getMaterials } from "./Material";
 import { formatFloat } from "../constants";
@@ -30,14 +30,14 @@ export class Player extends Entity {
   armorsId: string[] = [];
   materialsId: string[] = [];
   weaponsId: string[] = [];
-  potionsId: string[] = [];
+  consumablesId: string[] = [];
   equippedWeapons?: string;
   weaponReforge?: string;
   equippedArmorsId: string[] = [];
   floor = 1;
   phase = 1;
   redRoomPassed = 0;
-  redRoomRequired = 20;
+  redRoomRequired = 30;
   coins = 0;
   isDead = false;
   deathCount = 0;
@@ -68,9 +68,26 @@ export class Player extends Entity {
     return this.baseAttack + weaponAtk;
   }
 
+  specialty() {
+    return this.weapon()?.specialty;
+  }
+
   get maxHP() {
     const armhp = this.armors.reduce((acc, armor) => acc + armor.hp, 0);
-    return this.baseHP + armhp;
+    let reforgehp = 0;
+    if (this.equippedWeapons) {
+      const weapon = this.weapon();
+      if (this.weaponReforge && weapon) {
+        const reforge = getWeaponReforge(this.weaponReforge);
+        if (!reforge) {
+          return this.baseHP + armhp;
+        }
+
+        reforgehp = reforge.hp;
+      }
+    }
+
+    return this.baseHP + armhp + reforgehp;
   }
 
   deletePlayerData() {
@@ -85,7 +102,7 @@ export class Player extends Entity {
     this.armorsId = [];
     this.materialsId = [];
     this.weaponsId = [];
-    this.potionsId = [];
+    this.consumablesId = [];
     this.equippedWeapons = undefined;
     this.equippedArmorsId = [];
     this.floor = 1;
@@ -123,7 +140,7 @@ export class Player extends Entity {
     return [
       ...this.materialsId,
       ...this.weaponsId,
-      ...this.potionsId,
+      ...this.consumablesId,
       ...this.armorsId,
     ].includes(itemId);
   }
@@ -157,8 +174,8 @@ export class Player extends Entity {
       case "material":
         this.materialsId.push(item.id);
         break;
-      case "potion":
-        this.potionsId.push(item.id);
+      case "consumable":
+        this.consumablesId.push(item.id);
         break;
     }
   }
@@ -176,8 +193,8 @@ export class Player extends Entity {
       case "material":
         this.materialsId = this.materialsId.filter((x) => x !== item.id);
         break;
-      case "potion":
-        this.potionsId = this.potionsId.filter((x) => x !== item.id);
+      case "consumable":
+        this.consumablesId = this.consumablesId.filter((x) => x !== item.id);
         break;
     }
   }
@@ -232,7 +249,7 @@ export class Player extends Entity {
     const atkDiffShow = atkDiff !== 0 ? ` (+${atkDiff})` : "";
 
     const fields = [
-      `> \`🗺️ Current Floor\` - **${this.floor}**`,
+      `> \`🗺️ Current World Level\` - **${this.floor}**`,
       `> \`🧭 Current Phase\` - **${this.phase}**`,
       `> \`☠️ Red Rooms\` - **${this.redRoomPassed}/${this.redRoomRequired}**`,
       `> \`⭐ Level\` - **${this.level}** | \`💎 XP\` - **${this.xp}/${this.xpRequired}**`,
@@ -305,7 +322,7 @@ export class Player extends Entity {
 
   get items() {
     return [
-      ...this.potions,
+      ...this.consumables,
       ...this.materials,
       ...this.armors,
       ...this.weapons,
@@ -317,7 +334,10 @@ export class Player extends Entity {
   }
 
   get defenceChance() {
-    return this.equippedArmors.reduce((acc, armor) => acc + armor.defenceChance, 0);
+    return this.equippedArmors.reduce(
+      (acc, armor) => acc + armor.defenceChance,
+      0
+    );
   }
 
   get crit() {
@@ -328,8 +348,8 @@ export class Player extends Entity {
     return this.weapon()?.critChance || 0;
   }
 
-  get potions() {
-    return getPotions(this.potionsId);
+  get consumables() {
+    return getConsumables(this.consumablesId);
   }
 
   get materials() {

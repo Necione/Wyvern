@@ -7,7 +7,7 @@ import { client } from "..";
 import { Player } from "../structure/Player";
 import { weapons } from "../structure/Weapon";
 import { armors } from "../structure/Armor";
-import { potions } from "../structure/Potion";
+import { consumables } from "../structure/Consumable";
 import { isItemBuildMaterial, materials } from "../structure/Material";
 import { toTitleCase } from "../constants";
 import { showStat } from "../structure/Item";
@@ -35,8 +35,8 @@ export default class extends Command {
             value: "armor",
           },
           {
-            name: "Potion",
-            value: "potion",
+            name: "Consumable",
+            value: "consumable",
           },
           {
             name: "Material",
@@ -56,8 +56,8 @@ export default class extends Command {
         ? weapons
         : category === "armor"
         ? armors
-        : category === "potion"
-        ? potions
+        : category === "consumable"
+        ? consumables
         : materials;
     const pages = chunk(
       items.filter((x) => !x.trader && !x.hidden),
@@ -67,11 +67,7 @@ export default class extends Command {
     const pagesEmbed = pages.map((page) => {
       const content = page
         .map((item) => {
-          const lines = [
-            bold(`${item.name} (ID: ${item.id})`),
-            `*${item.desc}*`,
-            showStat(item),
-          ];
+          const lines = [bold(`${item.name} (ID: ${item.id})`), showStat(item)];
 
           if (isItemBuildMaterial(item)) {
             const materials = item.materials.map((x) => {

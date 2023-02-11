@@ -1,0 +1,71 @@
+[
+  {
+    "floor": 1,
+    "items": [
+      {
+        "id": "rock",
+        "amount": 2
+      },
+      {
+        "id": "iron_chunk",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "items": [
+      {
+        "id": "crystal_chunk",
+        "amount": 1
+      },
+      {
+        "id": "iron_chunk",
+        "amount": 1
+      },
+      {
+        "id": "slime_condensate",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "items": [
+      {
+        "id": "iron_chunk",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "items": [
+      {
+        "id": "rock",
+        "amount": 2
+      },
+      {
+        "id": "slime_condensate",
+        "amount": 2
+      },
+      {
+        "id": "damaged_mask",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "floor": 1,
+    "items": [
+      {
+        "id": "stained_mask",
+        "amount": 1
+      },
+      {
+        "id": "crystal_chunk",
+        "amount": 1
+      }
+    ]
+  }
+]

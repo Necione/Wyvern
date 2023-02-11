@@ -3,28 +3,24 @@
     "id": "cor_lapis",
     "name": "Cor Lapis",
     "price": 10,
-    "desc": "A precious crystal of condensed pure Geo element.",
     "trader": true
   },
   {
     "id": "noctilucous_jade",
     "name": "Noctilucous Jade",
     "price": 10,
-    "desc": "A rare mineral that glimmers in the dark.",
     "trader": true
   },
   {
     "id": "star_silver",
     "name": "Star Silver",
     "price": 10,
-    "desc": "A rare and precious ore formed by the unique geographical conditions of Dragonspine.",
     "trader": true
   },
   {
     "id": "ruby",
     "name": "Ruby",
     "price": 25,
-    "desc": "A precious stone that shines bright red.",
     "trader": true
   }
 ]

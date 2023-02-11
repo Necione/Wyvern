@@ -2,7 +2,6 @@
   {
     "id": "eye_of_the_storm",
     "name": "Eye of the Storm",
-    "desc": "The watcher of the second floor",
     "thumbnailUrl": "https://file.coffee/u/Zv5NvPykXwD_pgwAkF3xN.webp",
     "floor": 1,
     "hp": 150,
@@ -21,7 +20,6 @@
   {
     "id": "primo_geovishap",
     "name": "Primo Geovishap",
-    "desc": "The watcher of the third floor",
     "thumbnailUrl": "https://file.coffee/u/rUnBokU3aBqC93R7baX3V.webp",
     "floor": 2,
     "hp": 225,

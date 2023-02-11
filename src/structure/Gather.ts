@@ -4,9 +4,9 @@ import { EmbedBuilder } from "discord.js";
 import { client } from "..";
 import { getData, Unit } from "../constants";
 
-const mineData = getData<MineData>("content", "mine.json");
+const gatherData = getData<GatherData>("content", "gather.json");
 
-interface MineData {
+interface GatherData {
   floor: number;
   items: {
     id: string;
@@ -14,18 +14,18 @@ interface MineData {
   }[];
 }
 
-export class Mine {
+export class Gather {
   static DROP_CHANCE = 1;
 
   constructor(public floor: number, public items: Unit[]) {}
 
   static get all() {
-    return mineData.map((x) => new Mine(x.floor, x.items));
+    return gatherData.map((x) => new Gather(x.floor, x.items));
   }
 
   static random(floor: number) {
-    const mines = Mine.all.filter((x) => x.floor === floor);
-    return random.pick(mines);
+    const gathers = Gather.all.filter((x) => x.floor === floor);
+    return random.pick(gathers);
   }
 
   show() {

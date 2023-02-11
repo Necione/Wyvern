@@ -8,7 +8,6 @@ import {
   ButtonStyle,
   ChannelType,
   CommandInteraction,
-  GuildMemberRoleManager,
   TextChannel,
   ThreadChannel,
 } from "discord.js";
@@ -110,25 +109,26 @@ export class Battle {
     }
   }
 
-  monsterEmbed(initialEncounter = false) {
+  monsterEmbed() {
     const fields = [
+      `> \`📜 Enemy Type\` - **${this.monster.type}**`,
       `> \`${HEART} Base HP\` - **${this.monsterHp.toFixed(2)}**`,
       `> \`${SWORD} Base ATK\` - **${this.monster.minAtk} to ${this.monster.maxAtk}**`,
       `> \`🍃 DODGE % \` - **${formatPercent(this.monster.playerMissChance)}**`,
-      `> \`🛡️ DEF\` - **${
-        this.monster.defence
-      }** | \`🛡️ DEF % \` - **${formatPercent(this.monster.defenceChance)}**`,
-    ];
+      ...(this.monster.defence === 0 && this.monster.defenceChance === 0
+        ? []
+        : [
+            `> \`🛡️ DEF\` - **${this.monster.defence}**`,
+            `> \`🛡️ DEF % \` - **${formatPercent(
+              this.monster.defenceChance
+            )}**`,
+          ]),
+    ].filter(Boolean);
 
     const embed = new EmbedBuilder()
       .setColor(RED)
       .setThumbnail(this.monster.thumbnailUrl)
-      .setTitle(
-        initialEncounter
-          ? `You encountered a... ${this.monster.name}!`
-          : `${this.monster.name}`
-      )
-      .setDescription(this.monster.description)
+      .setTitle(this.monster.name)
       .addFields([
         {
           name: "\u200b",
@@ -140,8 +140,6 @@ export class Battle {
   }
 
   async delete() {
-    const memberRoles = this.i.member!.roles as GuildMemberRoleManager;
-    const role = await client.getRole(client.settings.roleId);
     const channel = client.getChannel(client.settings.threadChannelId);
 
     if (!(channel instanceof TextChannel)) {
@@ -160,7 +158,6 @@ export class Battle {
     const message = await this.getMessage();
 
     await message.edit({ components: [] });
-    await memberRoles.remove(role);
     await sleep(5 * time.SECOND);
     await thread.delete();
     await client.battles.delete(this.player.id);
@@ -197,11 +194,17 @@ export class Battle {
           throw new CommandError(`Cannot find item "${drop.id}"`);
         }
 
-        for (let i = 0; i < drop.amount; i++) {
+        let dropAmount = random.integer(drop.min, drop.max);
+
+        if (dropAmount > 1 && !random.bool(0.4)) {
+          dropAmount = 1;
+        }
+
+        for (let i = 0; i < dropAmount; i++) {
           this.player.addItem(item);
         }
 
-        messages.push(`You've earned **${item.name}** \`(x${drop.amount})\``);
+        messages.push(`You've earned **${item.name}** \`(x${dropAmount})\``);
       }
 
       const xp = this.monster.xpDrop();
@@ -220,14 +223,14 @@ export class Battle {
       if (this.monster.isBoss) {
         this.player.floor++;
         this.player.redRoomPassed = 0;
-        this.player.redRoomRequired += 5;
+        this.player.redRoomRequired += 10;
         this.player.phase = 1;
 
         await this.player.save();
         messages.push(
-          `\`⭐\` You've ascended to floor **${this.player.floor}**`
+          `\`⭐\` Your World Level has increased to **${this.player.floor}**!`
         );
-      } else if ((this.player.redRoomPassed + 1) % 5 === 0) {
+      } else if ((this.player.redRoomPassed + 1) % 10 === 0) {
         this.player.phase++;
         this.player.redRoomPassed++;
         await this.player.save();
@@ -246,8 +249,14 @@ export class Battle {
   }
 
   handleLightAttack() {
+    let dmgDone: number;
     const isDefended = random.bool(this.monster.defenceChance);
-    let dmgDone = this.player.attack();
+    if (this.monster.type === this.player.specialty()) {
+      dmgDone = this.player.attack() * 10;
+    } else {
+      dmgDone = this.player.attack();
+    }
+
     let isCrit = random.bool(this.player.critChance);
 
     if (isCrit) {
@@ -314,8 +323,14 @@ export class Battle {
   }
 
   handleHeavyAttack() {
+    let dmgDone: number;
     const isDefended = random.bool(this.monster.defenceChance);
-    let dmgDone = this.player.attack() * 2;
+    if (this.monster.type === this.player.specialty()) {
+      dmgDone = this.player.attack() * 10;
+    } else {
+      dmgDone = this.player.attack() * 1.5;
+    }
+
     let isCrit = random.bool(this.player.critChance);
 
     if (isCrit) {
@@ -503,7 +518,7 @@ export class Battle {
   }
 
   async start() {
-    const monsterEmbed = this.monsterEmbed(true);
+    const monsterEmbed = this.monsterEmbed();
     const channel = this.i.channel as TextChannel;
     const user = this.i.user;
 

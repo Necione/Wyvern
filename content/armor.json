@@ -2,7 +2,6 @@
   {
     "id": "adventurers_helmet",
     "name": "Adventurer's Helmet",
-    "desc": "Common helmet found in Teyvat shops!",
     "price": 15,
     "type": "head",
     "hp": 5,
@@ -18,7 +17,6 @@
   {
     "id": "adventurers_chestplate",
     "name": "Adventurer's Chestplate",
-    "desc": "Common chestplate found in Teyvat shops!",
     "price": 30,
     "type": "chest",
     "hp": 10,
@@ -38,7 +36,6 @@
   {
     "id": "adventurers_leggings",
     "name": "Adventurer's Leggings",
-    "desc": "Common leggings found in Teyvat shops!",
     "price": 25,
     "type": "leggings",
     "hp": 7.5,
@@ -58,7 +55,6 @@
   {
     "id": "adventurers_boots",
     "name": "Adventurer's Boots",
-    "desc": "Common boots found in Teyvat shops!",
     "price": 5,
     "type": "boots",
     "hp": 2,

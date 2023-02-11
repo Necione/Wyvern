@@ -2,16 +2,20 @@
   {
     "id": "dull_blade",
     "name": "Dull Blade",
-    "desc": "Travels are full of meetings and partings.",
     "atk": 2,
     "crit": 0,
     "critChance": 0,
     "heal": 0,
-    "price": 10,
+    "price": 20,
+    "specialty": "Hilichurl",
     "materials": [
       {
         "id": "iron_chunk",
-        "amount": 3
+        "amount": 1
+      },
+      {
+        "id": "stained_mask",
+        "amount": 1
       },
       {
         "id": "rock",
@@ -20,14 +24,34 @@
     ]
   },
   {
+    "id": "iron_point",
+    "name": "Iron Point",
+    "atk": 3,
+    "crit": 1.025,
+    "critChance": 0.2,
+    "heal": 0,
+    "price": 30,
+    "specialty": "Slime",
+    "materials": [
+      {
+        "id": "iron_chunk",
+        "amount": 1
+      },
+      {
+        "id": "star_silver",
+        "amount": 1
+      }
+    ]
+  },
+  {
     "id": "silver_sword",
     "name": "Silver Sword",
-    "desc": "It is the pure heart of the wandering exorcist that is the true bane of evil.",
     "atk": 3.5,
     "crit": 1.1,
     "critChance": 0.05,
     "heal": 0,
-    "price": 15,
+    "price": 35,
+    "specialty": "Hilichurl",
     "materials": [
       {
         "id": "iron_chunk",
@@ -35,10 +59,14 @@
       },
       {
         "id": "stained_mask",
-        "amount": 1
+        "amount": 2
       },
       {
-        "id": "crystal_chunk",
+        "id": "treasure_hoarder_insignia",
+        "amount": 2
+      },
+      {
+        "id": "star_silver",
         "amount": 1
       }
     ]
@@ -46,12 +74,12 @@
   {
     "id": "ferrous_shadow",
     "name": "Ferrous Shadow",
-    "desc": "A replica of the Lion of Light's greatsword",
     "atk": 4,
     "crit": 1.12,
     "critChance": 0.1,
     "heal": 0,
-    "price": 25,
+    "price": 40,
+    "specialty": "Slime",
     "materials": [
       {
         "id": "onimous_mask",
@@ -64,6 +92,30 @@
       {
         "id": "crystal_chunk",
         "amount": 2
+      },
+      {
+        "id": "noctilucous_jade",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "black_tassel",
+    "name": "BLack Tassel",
+    "atk": 4,
+    "crit": 1.05,
+    "critChance": 0.3,
+    "heal": 0,
+    "price": 40,
+    "specialty": "Hilichurl",
+    "materials": [
+      {
+        "id": "star_silver",
+        "amount": 2
+      },
+      {
+        "id": "silver_raven_insignia",
+        "amount": 1
       }
     ]
   }

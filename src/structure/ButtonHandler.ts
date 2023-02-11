@@ -37,11 +37,7 @@ export class ButtonHandler {
   private filter?: (user: User) => boolean;
   private collector?: InteractionCollector<ButtonInteraction>;
 
-  constructor(
-    msg: Message, 
-    embed: EmbedBuilder[], 
-    userID?: string,
-  ) {
+  constructor(msg: Message, embed: EmbedBuilder[], userID?: string) {
     this.msg = msg;
     this.userID = userID || msg.author.id;
     this.embed = embed;
@@ -108,7 +104,7 @@ export class ButtonHandler {
       id,
       label,
       callback,
-    }
+    };
 
     this.buttons.push(button);
     GLOBAL_BUTTONS.push(button);
@@ -124,7 +120,7 @@ export class ButtonHandler {
       id,
       label,
       callback: () => {},
-    }
+    };
 
     this.buttons.push(button);
     GLOBAL_BUTTONS.push(button);
@@ -140,7 +136,6 @@ export class ButtonHandler {
   /** start collecting button click */
   async run() {
     const buttons = this.buttons.map((x) => {
-
       const btn = new ButtonBuilder()
         .setCustomId(x.id)
         .setLabel(x.label)
@@ -150,13 +145,14 @@ export class ButtonHandler {
         btn.setStyle(ButtonStyle.Danger);
       }
 
-      return btn
+      return btn;
     });
 
-    const row = new ActionRowBuilder<ButtonBuilder>()
-      .addComponents(buttons);
-    const menu = await this.msg.channel
-      .send({ embeds: [...this.embed], components: [row] });
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents(buttons);
+    const menu = await this.msg.channel.send({
+      embeds: [...this.embed],
+      components: [row],
+    });
 
     const filter = (i: MessageComponentInteraction) => {
       i.deferUpdate().catch(() => {});
@@ -169,10 +165,8 @@ export class ButtonHandler {
 
       if (this.users) {
         isValidUser = this.users.includes(userID);
-
       } else if (this.isMultiUser()) {
         isValidUser = true;
-
       }
 
       const clicked = this.clickedUsers.get(userID) || 0;
@@ -187,13 +181,11 @@ export class ButtonHandler {
 
     let max = this.max;
 
-    if (this.users) { 
-      max = this.users.length * this.max; 
-
-    } else if (this.isMultiUser()) { 
+    if (this.users) {
+      max = this.users.length * this.max;
+    } else if (this.isMultiUser()) {
       max = this.maxUser * this.max;
-
-    };
+    }
 
     const collector = menu.createMessageComponentCollector({
       max,
@@ -202,49 +194,46 @@ export class ButtonHandler {
       time: this.timeout,
     });
 
-    this.collector = collector as InteractionCollector<ButtonInteraction<CacheType>>;
+    this.collector = collector as InteractionCollector<
+      ButtonInteraction<CacheType>
+    >;
 
     return new Promise<void>((resolve, reject) => {
-
       const promises: Promise<void>[] = [];
 
-      collector.on("collect", async button => {
-        let btn = this.buttons.find(x => x.id === button.customId);
+      collector.on("collect", async (button) => {
+        let btn = this.buttons.find((x) => x.id === button.customId);
 
         if (!btn) {
-          btn = GLOBAL_BUTTONS.find(x => {
+          btn = GLOBAL_BUTTONS.find((x) => {
             const btnHandlerID = this.getButtonHandlerID(x.id);
-            return btnHandlerID === this.id && x.id === button.customId
+            return btnHandlerID === this.id && x.id === button.customId;
           });
-        } 
+        }
 
         if (btn) {
-          
           try {
-
             const promise = btn.callback(button.user, button.customId);
 
             if (promise) promises.push(promise);
-
           } catch (err) {
             collector.emit("end");
             reject(err);
           }
         }
-
-      })
+      });
 
       collector.on("end", async () => {
         await menu.delete().catch(() => {});
 
         for (const button of this.buttons) {
-          const index = GLOBAL_BUTTONS.findIndex(x => x.id === button.id);
+          const index = GLOBAL_BUTTONS.findIndex((x) => x.id === button.id);
           GLOBAL_BUTTONS.splice(index, 1);
         }
 
         Promise.allSettled(promises)
           .then(() => resolve())
-          .catch(err => reject(err));
+          .catch((err) => reject(err));
       });
     });
   }

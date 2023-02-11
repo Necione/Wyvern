@@ -7,6 +7,8 @@ export interface Weapon extends Item, ItemBuildMaterial {
   atk: number;
   crit: number;
   critChance: number;
+  hp: number;
+  specialty: string;
 }
 
 export const weapons = getData<Weapon>("content", "weapon.json");

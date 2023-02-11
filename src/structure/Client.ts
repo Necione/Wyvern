@@ -7,7 +7,7 @@ import { getData } from "../constants";
 import { getWeapon, Weapon, weapons } from "./Weapon";
 import { Armor, armors, getArmor } from "./Armor";
 import { getMaterial, Material, materials } from "./Material";
-import { getPotion, Potion, potions } from "./Potion";
+import { getConsumable, Consumable, consumables } from "./Consumable";
 import { Item } from "./Item";
 
 const settingsFile =
@@ -43,17 +43,18 @@ export class Client extends DiscordClient {
 
   settings = {
     channelId: settingsData.channelId,
-    roleId: settingsData.roleId,
     guildId: settingsData.guildId,
     threadChannelId: settingsData.threadChannelId,
   };
 
-  getItem(id: string): Weapon | Armor | Potion | Material | undefined {
-    return getWeapon(id) || getArmor(id) || getPotion(id) || getMaterial(id);
+  getItem(id: string): Weapon | Armor | Consumable | Material | undefined {
+    return (
+      getWeapon(id) || getArmor(id) || getConsumable(id) || getMaterial(id)
+    );
   }
 
   get items() {
-    return [...weapons, ...armors, ...potions, ...materials];
+    return [...weapons, ...armors, ...consumables, ...materials];
   }
 
   get traderItems() {
@@ -67,8 +68,8 @@ export class Client extends DiscordClient {
       return "weapon" as const;
     } else if (getMaterial(item.id)) {
       return "material" as const;
-    } else if (getPotion(item.id)) {
-      return "potion" as const;
+    } else if (getConsumable(item.id)) {
+      return "consumable" as const;
     } else {
       return undefined;
     }
@@ -80,14 +81,5 @@ export class Client extends DiscordClient {
       throw new CommandError(`Cannot find channel "${channelId}"`);
     }
     return channel;
-  }
-
-  async getRole(roleId: string) {
-    const guild = await this.guilds.fetch(this.settings.guildId);
-    const role = await guild.roles.fetch(roleId);
-    if (!role) {
-      throw new CommandError(`Cannot find role "${roleId}"`);
-    }
-    return role;
   }
 }

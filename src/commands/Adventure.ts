@@ -3,7 +3,6 @@ import {
   ChannelType,
   CommandInteraction,
   EmbedBuilder,
-  GuildMemberRoleManager,
   Message,
   TextChannel,
 } from "discord.js";
@@ -46,10 +45,7 @@ export default class extends Command {
       ? Monster.randomBoss(player.floor)
       : Monster.random(player.floor, player.phase);
     const battle = new Battle(i, player, monster);
-    const role = await client.getRole(client.settings.roleId);
-    const memberRoles = i.member?.roles as GuildMemberRoleManager;
 
-    await memberRoles.add(role);
     await battle.start();
 
     // checks if player starts first
@@ -117,7 +113,6 @@ export default class extends Command {
           .map((item) => {
             const lines = [
               bold(`${item.name} (ID: ${item.id})`),
-              `*${item.desc}*`,
               showStat(item),
             ];
 

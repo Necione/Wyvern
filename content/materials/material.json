@@ -2,7 +2,6 @@
   {
     "id": "leather",
     "name": "Leather",
-    "price": 5,
-    "desc": "A piece of leather..."
+    "price": 5
   }
 ]
