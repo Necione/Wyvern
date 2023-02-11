@@ -9,7 +9,7 @@
     "materials": [
       {
         "id": "slime_condensate",
-        "amount": 3
+        "amount": 2
       }
     ]
   },
@@ -17,7 +17,7 @@
     "id": "energy_drink",
     "name": "Energy Drink",
     "desc": "It's like coffee",
-    "energy": 25,
+    "energy": 40,
     "heal": 0,
     "price": 10,
     "materials": [

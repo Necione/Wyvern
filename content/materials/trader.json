@@ -19,5 +19,12 @@
     "price": 10,
     "desc": "A rare and precious ore formed by the unique geographical conditions of Dragonspine.",
     "trader": true
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "price": 25,
+    "desc": "A precious stone that shines bright red.",
+    "trader": true
   }
 ]
