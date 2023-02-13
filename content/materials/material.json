@@ -1,7 +1,32 @@
 [
   {
-    "id": "leather",
-    "name": "Leather",
-    "price": 5
+    "id": "slime_condensate",
+    "name": "Slime Condensate",
+    "price": 4
+  },
+  {
+    "id": "slime_secretions",
+    "name": "Slime Secretions",
+    "price": 8
+  },
+  {
+    "id": "slime_concentrate",
+    "name": "Slime Concentrate",
+    "price": 13
+  },
+  {
+    "id": "damaged_mask",
+    "name": "Damaged Mask",
+    "price": 4
+  },
+  {
+    "id": "stained_mask",
+    "name": "Stained Mask",
+    "price": 8
+  },
+  {
+    "id": "onimous_mask",
+    "name": "Onimous Mask",
+    "price": 13
   }
 ]

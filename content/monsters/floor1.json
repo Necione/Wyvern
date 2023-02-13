@@ -1,22 +1,23 @@
 [
   {
     "id": "hilichurl1",
-    "name": "[ Lv1 ] Hilichurl",
+    "name": "Hilichurl",
     "thumbnailUrl": "https://file.coffee/u/NijxJxBiDAF9-0tCGXRY_.webp",
     "floor": 1,
     "phase": 1,
     "type": "Hilichurl",
-    "hp": 15,
+    "hp": 10,
     "defence": 0,
     "defenceChance": 0,
     "minAtk": 1,
     "maxAtk": 3,
-    "minXp": 1,
-    "maxXp": 5,
+    "minXp": 5,
+    "maxXp": 10,
     "missChance": 0.15,
     "playerMissChance": 0.1,
     "fleeChance": 0.25,
-    "coins": 5,
+    "minCoins": 4,
+    "maxCoins": 8,
     "drop": [
       {
         "id": "damaged_mask",
@@ -27,7 +28,7 @@
       {
         "id": "stained_mask",
         "min": 1,
-        "max": 3,
+        "max": 2,
         "dropChance": 0.25
       },
       {
@@ -46,22 +47,23 @@
   },
   {
     "id": "anemo_slime1",
-    "name": "[ Lv1 ] Anemo Slime",
+    "name": "Anemo Slime",
     "thumbnailUrl": "https://file.coffee/u/b_adw8hj83cozmujBCzN3.webp",
     "floor": 1,
     "phase": 1,
     "type": "Slime",
-    "hp": 12.5,
+    "hp": 7,
     "defence": 0,
     "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
-    "minXp": 4,
-    "maxXp": 5,
+    "minXp": 5,
+    "maxXp": 10,
     "missChance": 0.15,
-    "playerMissChance": 0.35,
+    "playerMissChance": 0.15,
     "fleeChance": 0.2,
-    "coins": 5,
+    "minCoins": 4,
+    "maxCoins": 8,
     "drop": [
       {
         "id": "slime_condensate",
@@ -84,23 +86,24 @@
     ]
   },
   {
-    "id": "electro_slime1",
-    "name": "[ Lv1 ] Electro Slime",
+    "id": "electro_slime",
+    "name": "Electro Slime",
     "thumbnailUrl": "https://file.coffee/u/taZCEULrUqzITwGfjaP5z.webp",
     "floor": 1,
     "phase": 1,
     "type": "Slime",
-    "hp": 17,
+    "hp": 10,
     "defence": 0,
     "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
-    "minXp": 1,
-    "maxXp": 5,
+    "minXp": 5,
+    "maxXp": 10,
     "missChance": 0.15,
     "playerMissChance": 0.1,
     "fleeChance": 0.2,
-    "coins": 5,
+    "minCoins": 4,
+    "maxCoins": 8,
     "drop": [
       {
         "id": "slime_condensate",
@@ -123,23 +126,24 @@
     ]
   },
   {
-    "id": "cryo_hilichurl1",
-    "name": "[ Lv1 ] Cryo Hilichurl",
+    "id": "cryo_hilichurl",
+    "name": "Cryo Hilichurl",
     "thumbnailUrl": "https://file.coffee/u/YFaV8RL0F4BOevcZOCNMB.webp",
     "floor": 1,
     "phase": 1,
     "type": "Hilichurl",
-    "hp": 17,
+    "hp": 15,
     "defence": 0,
     "defenceChance": 0,
     "minAtk": 2,
     "maxAtk": 3,
-    "minXp": 1,
-    "maxXp": 5,
+    "minXp": 5,
+    "maxXp": 10,
     "missChance": 0.15,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
-    "coins": 5,
+    "minCoins": 4,
+    "maxCoins": 8,
     "drop": [
       {
         "id": "damaged_mask",
@@ -150,7 +154,7 @@
       {
         "id": "stained_mask",
         "min": 1,
-        "max": 3,
+        "max": 2,
         "dropChance": 0.25
       },
       {
@@ -168,23 +172,24 @@
     ]
   },
   {
-    "id": "mitachurl1",
-    "name": "[ Lv1 ] Mitachurl",
-    "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
+    "id": "electro_hilichurl",
+    "name": "Electro Hilichurl",
+    "thumbnailUrl": "https://file.coffee/u/DpLBClAkXeIuoC120FqIp.webp",
     "floor": 1,
     "phase": 2,
     "type": "Hilichurl",
     "hp": 20,
     "defence": 8,
-    "defenceChance": 0.2,
-    "minAtk": 2,
-    "maxAtk": 3,
-    "minXp": 3,
-    "maxXp": 6,
+    "defenceChance": 0.5,
+    "minAtk": 5,
+    "maxAtk": 8,
+    "minXp": 5,
+    "maxXp": 10,
     "missChance": 0.15,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
-    "coins": 5,
+    "minCoins": 5,
+    "maxCoins": 9,
     "drop": [
       {
         "id": "damaged_mask",
@@ -195,7 +200,7 @@
       {
         "id": "stained_mask",
         "min": 1,
-        "max": 3,
+        "max": 2,
         "dropChance": 0.25
       },
       {
@@ -213,23 +218,64 @@
     ]
   },
   {
-    "id": "treasure_hoarder1",
-    "name": "[ Lv1 ] Treasure Hoarder",
+    "id": "cryo_slime",
+    "name": "Cryo Slime",
+    "thumbnailUrl": "https://file.coffee/u/mVmzETglcHR3AsOhqXVFr.webp",
+    "floor": 1,
+    "phase": 2,
+    "type": "Slime",
+    "hp": 18,
+    "defence": 0,
+    "defenceChance": 0,
+    "minAtk": 3,
+    "maxAtk": 6,
+    "minXp": 5,
+    "maxXp": 10,
+    "missChance": 0.15,
+    "playerMissChance": 0.1,
+    "fleeChance": 0.2,
+    "minCoins": 4,
+    "maxCoins": 8,
+    "drop": [
+      {
+        "id": "slime_condensate",
+        "min": 1,
+        "max": 3,
+        "dropChance": 0.9
+      },
+      {
+        "id": "slime_secretions",
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.1
+      },
+      {
+        "id": "slime_concentrate",
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.05
+      }
+    ]
+  },
+  {
+    "id": "treasure_hoarder",
+    "name": "Treasure Hoarder",
     "thumbnailUrl": "https://file.coffee/u/IUzAPzaNRec66VsiqqzEL.webp",
     "floor": 1,
     "phase": 2,
     "type": "Treasure Hoarder",
-    "hp": 17,
-    "defence": 3,
-    "defenceChance": 0.1,
-    "minAtk": 1,
-    "maxAtk": 4,
-    "minXp": 3,
-    "maxXp": 6,
+    "hp": 22,
+    "defence": 5,
+    "defenceChance": 0.25,
+    "minAtk": 3,
+    "maxAtk": 6,
+    "minXp": 8,
+    "maxXp": 15,
     "missChance": 0.15,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
-    "coins": 5,
+    "minCoins": 5,
+    "maxCoins": 9,
     "drop": [
       {
         "id": "treasure_hoarder_insignia",
@@ -252,23 +298,24 @@
     ]
   },
   {
-    "id": "ruin_guard1",
-    "name": "[ Lv1 ] Ruin Guard",
-    "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
+    "id": "ruin_guard",
+    "name": "Ruin Guard",
+    "thumbnailUrl": "https://file.coffee/u/SForWQalGUITT5R2JzdT7.webp",
     "floor": 1,
     "phase": 3,
     "type": "Machine",
-    "hp": 25,
+    "hp": 35,
     "defence": 10,
-    "defenceChance": 0.4,
+    "defenceChance": 0.5,
     "minAtk": 5,
     "maxAtk": 9,
-    "minXp": 4,
-    "maxXp": 7,
+    "minXp": 10,
+    "maxXp": 20,
     "missChance": 0.15,
     "playerMissChance": 0.15,
     "fleeChance": 0.25,
-    "coins": 9,
+    "minCoins": 8,
+    "maxCoins": 13,
     "drop": [
       {
         "id": "chaos_device",
@@ -287,6 +334,52 @@
         "min": 1,
         "max": 2,
         "dropChance": 0.05
+      }
+    ]
+  },
+  {
+    "id": "mitachurl",
+    "name": "Mitachurl",
+    "thumbnailUrl": "https://file.coffee/u/buhRGqhMVKoye0YHwZSXn.webp",
+    "floor": 1,
+    "phase": 3,
+    "type": "Hilichurl",
+    "hp": 30,
+    "defence": 8,
+    "defenceChance": 0.5,
+    "minAtk": 4,
+    "maxAtk": 8,
+    "minXp": 5,
+    "maxXp": 15,
+    "missChance": 0.15,
+    "playerMissChance": 0.15,
+    "fleeChance": 0.25,
+    "minCoins": 5,
+    "maxCoins": 9,
+    "drop": [
+      {
+        "id": "damaged_mask",
+        "min": 1,
+        "max": 3,
+        "dropChance": 0.75
+      },
+      {
+        "id": "stained_mask",
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.25
+      },
+      {
+        "id": "onimous_mask",
+        "min": 1,
+        "max": 2,
+        "dropChance": 0.05
+      },
+      {
+        "id": "rock",
+        "min": 1,
+        "max": 3,
+        "dropChance": 0.9
       }
     ]
   }

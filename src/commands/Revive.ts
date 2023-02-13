@@ -28,7 +28,9 @@ export default class extends Command {
       await player.save();
       const embed = new EmbedBuilder()
         .setColor(GREEN)
-        .setDescription(`You have been revived from the dead!`);
+        .setDescription(
+          `You have used your daily revive, and came back from the dead!`
+        );
       await i.editReply({ embeds: [embed] });
     } else {
       this.cooldown = 0;

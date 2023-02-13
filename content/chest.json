@@ -1,7 +1,7 @@
 [
   {
     "floor": 1,
-    "coins": 5,
+    "coins": 8,
     "items": [
       {
         "id": "rock",
@@ -15,7 +15,7 @@
   },
   {
     "floor": 1,
-    "coins": 7,
+    "coins": 11,
     "items": [
       {
         "id": "crystal_chunk",
@@ -25,7 +25,7 @@
   },
   {
     "floor": 2,
-    "coins": 5,
+    "coins": 14,
     "items": [
       {
         "id": "rock",

@@ -19,12 +19,11 @@ export default class extends Command {
 
   async exec(i: CommandInteraction) {
     await i.deferReply();
-
     const player = await Player.load(i.user.id);
 
     if (player.energy < 100 || player.hp < player.maxHP) {
-      let energyRecovered = (player.energy += 40);
-      let healthRecovered = player.hp + 5;
+      let energyRecovered = (player.energy += 30);
+      let healthRecovered = player.hp + player.maxHP * 0.25;
 
       if (energyRecovered > 100) {
         player.energy = 100;
@@ -32,6 +31,8 @@ export default class extends Command {
 
       if (healthRecovered > player.maxHP) {
         player.hp = player.maxHP;
+      } else {
+        player.hp = healthRecovered;
       }
 
       await player.save();
@@ -43,7 +44,9 @@ export default class extends Command {
     const embed = new EmbedBuilder()
       .setColor(GREEN)
       .setDescription(
-        `You took a rest and recovered \`${LIGHTNING} 40 Energy\` and \`${HEART} 5 HP\`! `
+        `You took a rest and recovered \`${LIGHTNING} 30 Energy\` and \`${HEART} ${(
+          player.maxHP * 0.25
+        ).toFixed(2)} HP\`! `
       );
 
     await i.editReply({ embeds: [embed] });

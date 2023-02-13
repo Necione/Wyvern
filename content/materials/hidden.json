@@ -1,41 +1,5 @@
 [
   {
-    "id": "slime_condensate",
-    "name": "Slime Condensate",
-    "price": 5,
-    "hidden": true
-  },
-  {
-    "id": "slime_secretions",
-    "name": "Slime Secretions",
-    "price": 10,
-    "hidden": true
-  },
-  {
-    "id": "slime_concentrate",
-    "name": "Slime Concentrate",
-    "price": 15,
-    "hidden": true
-  },
-  {
-    "id": "damaged_mask",
-    "name": "Damaged Mask",
-    "price": 5,
-    "hidden": true
-  },
-  {
-    "id": "stained_mask",
-    "name": "Stained Mask",
-    "price": 10,
-    "hidden": true
-  },
-  {
-    "id": "onimous_mask",
-    "name": "Onimous Mask",
-    "price": 15,
-    "hidden": true
-  },
-  {
     "id": "chaos_device",
     "name": "Chaos Device",
     "price": 5,

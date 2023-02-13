@@ -17,16 +17,16 @@ export default class extends Command {
       throw new CommandError(`No equipped weapon`);
     }
 
-    if (player.coins < 15) {
+    if (player.coins < 10) {
       throw new CommandError(
-        `Insufficient Mora, $15 is required to reforge weapon`
+        `Insufficient Gold, $10 is required to reforge weapon`
       );
     }
 
     const reforge = randomReforges();
 
     player.weaponReforge = reforge.id;
-    player.coins -= 15;
+    player.coins -= 10;
 
     const embed = new EmbedBuilder()
       .setColor("Random")

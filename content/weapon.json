@@ -27,7 +27,7 @@
     "id": "iron_point",
     "name": "Iron Point",
     "atk": 3,
-    "crit": 1.025,
+    "crit": 0.025,
     "critChance": 0.2,
     "heal": 0,
     "price": 30,
@@ -47,7 +47,7 @@
     "id": "silver_sword",
     "name": "Silver Sword",
     "atk": 3.5,
-    "crit": 1.1,
+    "crit": 0.1,
     "critChance": 0.05,
     "heal": 0,
     "price": 35,
@@ -75,11 +75,11 @@
     "id": "ferrous_shadow",
     "name": "Ferrous Shadow",
     "atk": 4,
-    "crit": 1.12,
+    "crit": 0.12,
     "critChance": 0.1,
     "heal": 0,
     "price": 40,
-    "specialty": "Slime",
+    "specialty": "Machine",
     "materials": [
       {
         "id": "onimous_mask",
@@ -101,13 +101,13 @@
   },
   {
     "id": "black_tassel",
-    "name": "BLack Tassel",
+    "name": "Black Tassel",
     "atk": 4,
-    "crit": 1.05,
+    "crit": 0.05,
     "critChance": 0.3,
     "heal": 0,
     "price": 40,
-    "specialty": "Hilichurl",
+    "specialty": "Slime",
     "materials": [
       {
         "id": "star_silver",

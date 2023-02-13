@@ -1,10 +1,19 @@
 [
   {
-    "id": "mini_pot",
-    "name": "Mini Healing Potion",
-    "heal": 10,
+    "id": "mini_heal",
+    "name": "Mini Healing Potion ©",
+    "healPercent": 20,
     "energy": 0,
-    "price": 10,
+    "price": 5,
+    "materials": [],
+    "trader": true
+  },
+  {
+    "id": "medium_heal",
+    "name": "Mini Healing Potion ©",
+    "healPercent": 25,
+    "energy": 0,
+    "price": 8,
     "materials": [
       {
         "id": "slime_condensate",
@@ -14,41 +23,14 @@
   },
   {
     "id": "energy_drink",
-    "name": "Energy Drink",
-    "energy": 40,
-    "heal": 0,
-    "price": 10,
+    "name": "Energy Drink ©",
+    "energy": 30,
+    "healPercent": 0,
+    "price": 5,
     "materials": [
       {
         "id": "slime_condensate",
         "amount": 2
-      }
-    ]
-  },
-  {
-    "id": "medium_pot",
-    "name": "Medium Healing Potion",
-    "heal": 25,
-    "energy": 0,
-    "price": 15,
-    "materials": [
-      {
-        "id": "slime_secretions",
-        "amount": 2
-      }
-    ]
-  },
-  {
-    "id": "lesser_heal_scroll",
-    "name": "Lesser Healing Scroll",
-    "heal": 15,
-    "energy": 0,
-    "price": 5,
-    "trader": true,
-    "materials": [
-      {
-        "id": "ruby",
-        "amount": 1
       }
     ]
   }

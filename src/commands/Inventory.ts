@@ -47,7 +47,7 @@ export default class extends Command {
         .setTitle(`${i.user.username}#${i.user.discriminator}'s inventory:`)
         .setColor("Random")
         .setDescription(
-          `<:mora:1073793987829309562> **Mora:** ${player.coins}\n${content}`
+          `<:gold:1073793987829309562> **Gold:** ${player.coins}\n${content}`
         );
 
       return embed;

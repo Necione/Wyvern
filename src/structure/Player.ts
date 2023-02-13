@@ -23,7 +23,7 @@ import { formatFloat } from "../constants";
 export class Player extends Entity {
   readonly id: string;
   static readonly DEFAULT_ATTACK = 2.5;
-  static readonly DEFAULT_HP = 50;
+  static readonly DEFAULT_HP = 25;
   xp = 0;
   level = 1;
   energy = 100;
@@ -38,6 +38,7 @@ export class Player extends Entity {
   phase = 1;
   redRoomPassed = 0;
   redRoomRequired = 30;
+  kills = 0;
   coins = 0;
   isDead = false;
   deathCount = 0;
@@ -60,7 +61,7 @@ export class Player extends Entity {
   }
 
   get xpRequired() {
-    return this.level * 12 * 1.5;
+    return this.level * 15 * 1.25;
   }
 
   attack() {
@@ -133,7 +134,7 @@ export class Player extends Entity {
   }
 
   get baseHP() {
-    return Player.DEFAULT_HP + (this.level - 1) * 3;
+    return Player.DEFAULT_HP + (this.level - 1) * 2;
   }
 
   hasItem(itemId: string) {
@@ -244,7 +245,15 @@ export class Player extends Entity {
 
   show(user: User) {
     const hpDiff = this.maxHP - this.baseHP;
-    const hpDiffShow = hpDiff !== 0 ? ` (+${hpDiff})` : "";
+    let hpDiffShow = "";
+    if (hpDiff !== 0) {
+      if (hpDiff > 0) {
+        hpDiffShow = ` (+${hpDiff})`;
+      } else {
+        hpDiffShow = ` (${hpDiff})`;
+      }
+    }
+
     const atkDiff = this.attack() - this.baseAttack;
     const atkDiffShow = atkDiff !== 0 ? ` (+${atkDiff})` : "";
 
@@ -259,6 +268,7 @@ export class Player extends Entity {
     ].join("\n");
 
     const armorSet = this.armorSet;
+    const playerCrit = this.crit;
 
     const stats = [
       `> \`🧡 Base HP\` - ${bold(
@@ -276,7 +286,7 @@ export class Player extends Entity {
       `${
         this.crit || this.critChance !== 0
           ? `\>\ \`${EXPLOSION} Crit\` - **${formatPercent(
-              this.crit
+              playerCrit
             )}** | \`${EXPLOSION} Crit %\` - **${formatPercent(
               this.critChance
             )}**`

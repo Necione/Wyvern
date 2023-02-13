@@ -45,11 +45,11 @@ export function showStat<T extends Item>(item: T) {
         lines.push(`> + \`${EXPLOSION} ${formatPercent(item.critChance)} Crit %\` when equipped`);
       }
       break;
-    case "consumable":
+      case "consumable":
+        //@ts-ignore
+        if (item.healPercent !== 0) {
           //@ts-ignore
-        if (item.heal !== 0) {
-          //@ts-ignore
-          lines.push(`> + \`${HEART} ${item.heal} HP\` upon use`);
+          lines.push(`> + \`${HEART} ${item.healPercent}%\` of max HP upon use`);
         }
           //@ts-ignore
         if (item.energy !== 0) {

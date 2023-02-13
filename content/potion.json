@@ -1,0 +1,60 @@
+[
+  {
+    "id": "mini_pot",
+    "name": "Mini Healing Potion",
+    "desc": "It may come in handy eventually...",
+    "heal": 10,
+    "energy": 0,
+    "price": 10,
+    "materials": [
+      {
+        "id": "crystal",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "energy_drink",
+    "name": "Energy Drink",
+    "desc": "It's like coffee",
+    "energy": 25,
+    "heal": 0,
+    "price": 10,
+    "materials": [
+      {
+        "id": "crystal",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "medium_pot",
+    "name": "Medium Healing Potion",
+    "desc": "It may come in handy eventually...",
+    "heal": 25,
+    "energy": 0,
+    "price": 15,
+    "trader": true,
+    "materials": [
+      {
+        "id": "crystal",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "lesser_heal_scroll",
+    "name": "Lesser Healing Scroll",
+    "desc": "You're not sure how this works.",
+    "heal": 15,
+    "energy": 0,
+    "price": 5,
+    "trader": true,
+    "materials": [
+      {
+        "id": "ruby",
+        "amount": 1
+      }
+    ]
+  }
+]

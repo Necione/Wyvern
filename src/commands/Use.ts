@@ -44,24 +44,18 @@ export default class extends Command {
       }
 
       player.consumablesId = remove(item.id, player.consumablesId);
-      player.hp += item.heal;
-      player.energy += item.energy;
+      const healedAmount = (item.healPercent / 100) * player.maxHP;
+      player.hp = Math.min(player.hp + healedAmount, player.maxHP);
+      player.energy = Math.min(player.energy + item.energy, 100);
       await player.save();
-
-      if (player.hp + item.heal >= player.maxHP) {
-        player.hp = player.maxHP;
-      }
-      if (player.energy + item.energy >= 100) {
-        player.energy = 100;
-      }
 
       embed.setTitle(`You used a ${item.name}!`);
       let description = "Regained";
-      if (item.heal !== 0) {
-        description += ` \`${HEART} ${item.heal} HP\``;
+      if (healedAmount !== 0) {
+        description += ` \`${HEART} ${healedAmount} HP (${item.healPercent}%)\``;
       }
       if (item.energy !== 0) {
-        if (item.heal !== 0) {
+        if (healedAmount !== 0) {
           description += " and";
         }
         description += ` \`${LIGHTNING} ${item.energy} Energy\``;
@@ -74,6 +68,5 @@ export default class extends Command {
     }
 
     await i.editReply({ embeds: [embed] });
-    await player.save();
   }
 }

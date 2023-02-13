@@ -10,6 +10,7 @@ export interface Armor extends Item, ItemBuildMaterial {
   hp: number;
   defence: number;
   defenceChance: number;
+  atk: number;
 }
 
 export const armors = getData<Armor>("content", "armor.json");

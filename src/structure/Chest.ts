@@ -37,7 +37,7 @@ export class Chest {
     const messages = [];
 
     messages.push("You've got a chest!");
-    messages.push(`You earned **${this.coins}** Mora!`);
+    messages.push(`You earned **${this.coins}** Gold!`);
 
     for (const itemData of this.items) {
       const item = client.getItem(itemData.id);

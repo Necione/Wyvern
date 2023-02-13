@@ -1,10 +1,32 @@
 [
   {
+    "id": "rusty_shirt",
+    "name": "Rusty Shirt",
+    "price": 8,
+    "type": "chest",
+    "hp": 5,
+    "defence": 3,
+    "defenceChance": 0.05,
+    "trader": true,
+    "materials": []
+  },
+  {
+    "id": "boots_of_wisdom",
+    "name": "Boots of Wisdom",
+    "price": 15,
+    "type": "boots",
+    "hp": 12,
+    "defence": 1,
+    "defenceChance": 0.02,
+    "trader": true,
+    "materials": []
+  },
+  {
     "id": "adventurers_helmet",
     "name": "Adventurer's Helmet",
-    "price": 15,
+    "price": 10,
     "type": "head",
-    "hp": 5,
+    "hp": 6,
     "defence": 5,
     "defenceChance": 0.05,
     "materials": [
@@ -17,7 +39,7 @@
   {
     "id": "adventurers_chestplate",
     "name": "Adventurer's Chestplate",
-    "price": 30,
+    "price": 25,
     "type": "chest",
     "hp": 10,
     "defence": 10,
@@ -36,9 +58,9 @@
   {
     "id": "adventurers_leggings",
     "name": "Adventurer's Leggings",
-    "price": 25,
+    "price": 20,
     "type": "leggings",
-    "hp": 7.5,
+    "hp": 8,
     "defence": 7.5,
     "defenceChance": 0.075,
     "materials": [
@@ -57,7 +79,7 @@
     "name": "Adventurer's Boots",
     "price": 5,
     "type": "boots",
-    "hp": 2,
+    "hp": 3,
     "defence": 3,
     "defenceChance": 0.025,
     "materials": [

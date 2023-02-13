@@ -4,7 +4,6 @@ import { Pagination } from "@jiman24/discordjs-pagination";
 import { bold, chunk, code, time } from "@jiman24/discordjs-utils";
 import { isValidChannel } from "../execs/preExecs";
 import { client } from "..";
-import { Player } from "../structure/Player";
 import { weapons } from "../structure/Weapon";
 import { armors } from "../structure/Armor";
 import { consumables } from "../structure/Consumable";
@@ -83,7 +82,7 @@ export default class extends Command {
             lines.push("> Materials: " + materials.join());
           }
 
-          lines.push(`> Price: **$${item.price} Mora**`);
+          lines.push(`> Price: **$${item.price} Gold**`);
 
           return lines.filter((x) => !!x).join("\n");
         })

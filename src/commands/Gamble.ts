@@ -41,7 +41,7 @@ export default class extends Command {
     const player = await Player.load(i.user.id);
 
     if (player.coins < amount) {
-      throw new CommandError(`Insufficient Mora`);
+      throw new CommandError(`Insufficient Gold`);
     }
 
     const rows = Array(3)
@@ -82,11 +82,11 @@ export default class extends Command {
     player.coins -= amount;
 
     if (multiplier === 1) {
-      result += `\nYou lost **${amount}** Mora!`;
+      result += `\nYou lost **${amount}** Gold!`;
     } else {
       const winAmount = multiplier * amount;
       player.coins += winAmount;
-      result += `\nYou won **(x${multiplier}) ${winAmount}** Mora!`;
+      result += `\nYou won **(x${multiplier}) ${winAmount}** Gold!`;
     }
 
     i.reply(result);

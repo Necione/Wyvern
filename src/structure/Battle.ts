@@ -41,7 +41,9 @@ export class Battle {
     public player: Player,
     public monster: Monster
   ) {
-    this.monsterHp = this.monster.hp;
+    this.monsterHp = Math.round(
+      this.monster.hp + this.monster.hp * (this.player.level - 1) * 0.1
+    );
     this.monsterId = this.monster.id;
     this.channelId = "";
     this.threadId = "";
@@ -110,16 +112,25 @@ export class Battle {
   }
 
   monsterEmbed() {
+    const playerLevel = this.player.level;
+    const minAtkScaled = Math.round(
+      this.monster.minAtk * (1 + (2.5 / 100) * playerLevel)
+    );
+    const maxAtkScaled = Math.round(
+      this.monster.maxAtk * (1 + (2.5 / 100) * playerLevel)
+    );
+
     const fields = [
       `> \`📜 Enemy Type\` - **${this.monster.type}**`,
       `> \`${HEART} Base HP\` - **${this.monsterHp.toFixed(2)}**`,
-      `> \`${SWORD} Base ATK\` - **${this.monster.minAtk} to ${this.monster.maxAtk}**`,
+      `> \`${SWORD} Base ATK\` - **${minAtkScaled} to ${maxAtkScaled}**`,
       `> \`🍃 DODGE % \` - **${formatPercent(this.monster.playerMissChance)}**`,
       ...(this.monster.defence === 0 && this.monster.defenceChance === 0
         ? []
         : [
-            `> \`🛡️ DEF\` - **${this.monster.defence}**`,
-            `> \`🛡️ DEF % \` - **${formatPercent(
+            `> \`🛡️ DEF\` - **${
+              this.monster.defence
+            }** | \`🛡️ DEF % \` - **${formatPercent(
               this.monster.defenceChance
             )}**`,
           ]),
@@ -164,20 +175,23 @@ export class Battle {
   }
 
   async handleDead() {
+    const coinsEarned = random.integer(
+      this.monster.minCoins,
+      this.monster.maxCoins
+    );
+
     if (this.player.hp <= 0) {
-      this.player.redRoomPassed++;
       this.player.isDead = true;
       this.player.deathCount++;
 
       await this.player.save();
       throw new BattleEndError("**You have died!**");
     } else if (this.player.energy <= 0) {
-      this.player.redRoomPassed++;
       await this.player.save();
 
       throw new BattleEndError("**You ran out of energy!**");
     } else if (this.monsterHp <= 0) {
-      this.player.coins += this.monster.coins;
+      this.player.coins += coinsEarned;
 
       const messages = [`**${this.monster.name} has been defeated!**`];
 
@@ -209,7 +223,7 @@ export class Battle {
 
       const xp = this.monster.xpDrop();
       messages.push(`You've earned **${xp}** xp`);
-      messages.push(`You've earned **${this.monster.coins}** Mora`);
+      messages.push(`You've earned **${coinsEarned}** Gold`);
 
       const isLevelUp = this.player.addXp(xp);
 
@@ -233,10 +247,12 @@ export class Battle {
       } else if ((this.player.redRoomPassed + 1) % 10 === 0) {
         this.player.phase++;
         this.player.redRoomPassed++;
+        this.player.kills++;
         await this.player.save();
         messages.push(`\`⭐\` You've reached phase **${this.player.phase}**`);
       } else {
         this.player.redRoomPassed++;
+        this.player.kills++;
         await this.player.save();
       }
 
@@ -252,7 +268,7 @@ export class Battle {
     let dmgDone: number;
     const isDefended = random.bool(this.monster.defenceChance);
     if (this.monster.type === this.player.specialty()) {
-      dmgDone = this.player.attack() * 10;
+      dmgDone = this.player.attack() * 1.2;
     } else {
       dmgDone = this.player.attack();
     }
@@ -263,7 +279,7 @@ export class Battle {
       if (isDefended) {
         dmgDone =
           ((dmgDone * dmgDone) / (dmgDone + this.monster.defence)) *
-          this.player.crit;
+          (1 + this.player.crit);
 
         const embed = new EmbedBuilder()
           .setColor(BLUE)
@@ -277,7 +293,7 @@ export class Battle {
         this.player.energy -= 1;
         return embed;
       } else {
-        dmgDone = dmgDone * this.player.crit;
+        dmgDone = dmgDone * (1 + this.player.crit);
 
         const embed = new EmbedBuilder()
           .setColor(BLUE)
@@ -326,9 +342,9 @@ export class Battle {
     let dmgDone: number;
     const isDefended = random.bool(this.monster.defenceChance);
     if (this.monster.type === this.player.specialty()) {
-      dmgDone = this.player.attack() * 10;
+      dmgDone = this.player.attack() * 1.95;
     } else {
-      dmgDone = this.player.attack() * 1.5;
+      dmgDone = this.player.attack() * 1.75;
     }
 
     let isCrit = random.bool(this.player.critChance);
@@ -337,7 +353,7 @@ export class Battle {
       if (isDefended) {
         dmgDone =
           ((dmgDone * dmgDone) / (dmgDone + this.monster.defence)) *
-          this.player.crit;
+          (1 + this.player.crit);
 
         const embed = new EmbedBuilder()
           .setColor(BLUE)
@@ -351,7 +367,7 @@ export class Battle {
         this.player.energy -= 2;
         return embed;
       } else {
-        dmgDone = dmgDone * this.player.crit;
+        dmgDone = dmgDone * (1 + this.player.crit);
 
         const embed = new EmbedBuilder()
           .setColor(BLUE)
@@ -397,6 +413,7 @@ export class Battle {
   }
 
   async handleMonsterAttack() {
+    const playerLevel = this.player.level;
     const missAttack = random.bool(this.monster.missChance);
     const embed = new EmbedBuilder().setColor(RED);
 
@@ -405,7 +422,7 @@ export class Battle {
 
       await this.player.save();
     } else {
-      let dmgDone = this.monster.attack();
+      let dmgDone = this.monster.attack(playerLevel);
       const isDefended = random.bool(this.player.defenceChance);
 
       if (isDefended) {

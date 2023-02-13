@@ -30,16 +30,14 @@ import { randomItems } from "../structure/Trader";
 
 export default class extends Command {
   name = "adventure";
-  description = "Venture further into the dungeon...";
+  description = "Continue your adventure!";
   preExec = [isValidChannel];
   // prevent player from spamming this command
-  cooldown = process.env.ENV === "DEV" ? time.SECOND : time.MINUTE / 3;
-  blueRoomChance = process.env.ENV === "DEV" ? 1 : 0.5;
-  whiteRoomChance = 0.25;
+  blueRoomChance = process.env.ENV === "DEV" ? 1 : 0.8;
+  whiteRoomChance = 0.4;
 
   async battle(i: CommandInteraction) {
     const player = await Player.load(i.user.id);
-
     const isBoss = player.redRoomPassed >= player.redRoomRequired;
     const monster = isBoss
       ? Monster.randomBoss(player.floor)
@@ -130,7 +128,7 @@ export default class extends Command {
               lines.push("> Materials: " + materials.join());
             }
 
-            lines.push(`> Price: **$${item.price} Mora**`);
+            lines.push(`> Price: **$${item.price} Gold**`);
 
             return lines.filter((x) => !!x).join("\n");
           })
@@ -169,7 +167,7 @@ export default class extends Command {
 
       if (player.coins < selectedItem.price) {
         await message.edit({
-          content: `\`⚠️\` Insufficient Mora`,
+          content: `\`⚠️\` Insufficient Gold`,
           components: [],
           embeds: [],
         });
@@ -281,13 +279,12 @@ export default class extends Command {
     const isBattleRunning = await client.battles.has(i.user.id);
 
     if (isBattleRunning) {
-      this.cooldown = 0;
       throw new CommandError("`⚠️` There's already a battle running");
     }
 
     const buttonHandler = new Button(
       i,
-      "You venture futher into the dungeon, choose which room you enter:"
+      "You decide to continue your adventure..."
     );
 
     let room!: "red" | "white" | "blue" | "green";

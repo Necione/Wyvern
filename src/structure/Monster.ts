@@ -31,7 +31,8 @@ export interface MonsterData {
   missChance: number;
   playerMissChance: number;
   fleeChance: number;
-  coins: number;
+  minCoins: number;
+  maxCoins: number;
   drop: DropUnit[];
   isBoss?: boolean;
   type: string;
@@ -41,7 +42,8 @@ export class Monster extends Entity {
   thumbnailUrl: string;
   floor: number;
   phase: number;
-  coins: number;
+  minCoins: number;
+  maxCoins: number;
   drop: DropUnit[];
   isBoss?: boolean;
   fleeChance: number;
@@ -61,7 +63,8 @@ export class Monster extends Entity {
     this.floor = data.floor;
     this.phase = data.phase;
     this.drop = data.drop;
-    this.coins = data.coins;
+    this.minCoins = data.minCoins;
+    this.maxCoins = data.maxCoins;
     this.minAtk = data.minAtk;
     this.maxAtk = data.maxAtk;
     this.defence = data.defence;
@@ -75,7 +78,12 @@ export class Monster extends Entity {
     this.type = data.type;
   }
 
-  attack() {
+  attack(playerLevel: number) {
+    const attackIncrease = Math.round(
+      0.025 * (this.maxAtk - this.minAtk) * playerLevel
+    );
+    this.minAtk = Math.round(this.minAtk + attackIncrease);
+    this.maxAtk = Math.round(this.maxAtk + attackIncrease);
     return random.integer(this.minAtk, this.maxAtk);
   }
 
@@ -103,10 +111,17 @@ export class Monster extends Entity {
 
   static random(floor: number, phase: number) {
     const maxPhase = phase;
-    const minPhase = phase >= 3 ? phase - 2 : 1;
+    const minPhase = phase >= 3 ? phase - 1 : 1;
     const monsters = Monster.all.filter(
       (x) => x.floor === floor && x.phase <= maxPhase && x.phase >= minPhase
     );
-    return random.pick(monsters);
+    const threshold = 0.75;
+    if (Math.random() < threshold) {
+      const currentPhaseMonsters = monsters.filter((x) => x.phase === phase);
+      return random.pick(currentPhaseMonsters);
+    } else {
+      const lowerPhaseMonsters = monsters.filter((x) => x.phase === minPhase);
+      return random.pick(lowerPhaseMonsters);
+    }
   }
 }
