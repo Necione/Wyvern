@@ -42,7 +42,7 @@ export class Battle {
     public monster: Monster
   ) {
     this.monsterHp = Math.round(
-      this.monster.hp + this.monster.hp * (this.player.level - 1) * 0.1
+      this.monster.hp + this.monster.hp * (this.player.level - 1) * 0.3
     );
     this.monsterId = this.monster.id;
     this.channelId = "";

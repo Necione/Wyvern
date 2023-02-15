@@ -39,8 +39,10 @@ export default class extends Command {
     const embed = new EmbedBuilder().setColor("Random");
 
     if (isConsumable(item)) {
-      if (player.hp >= player.maxHP) {
-        throw new CommandError(`\`⚠️\` Your \`${HEART} HP\` is already full`);
+      if (player.energy >= 100) {
+        throw new CommandError(
+          `\`⚠️\` Your \`${LIGHTNING} Energy\` is already full`
+        );
       }
 
       player.consumablesId = remove(item.id, player.consumablesId);
@@ -52,7 +54,9 @@ export default class extends Command {
       embed.setTitle(`You used a ${item.name}!`);
       let description = "Regained";
       if (healedAmount !== 0) {
-        description += ` \`${HEART} ${healedAmount} HP (${item.healPercent}%)\``;
+        description += ` \`${HEART} ${healedAmount.toFixed(
+          2
+        )} HP (${item.healPercent.toFixed(2)}%)\``;
       }
       if (item.energy !== 0) {
         if (healedAmount !== 0) {

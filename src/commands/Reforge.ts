@@ -17,16 +17,16 @@ export default class extends Command {
       throw new CommandError(`No equipped weapon`);
     }
 
-    if (player.coins < 10) {
+    if (player.coins < 30) {
       throw new CommandError(
-        `Insufficient Gold, $10 is required to reforge weapon`
+        `Insufficient Gold, $30 is required to reforge weapon`
       );
     }
 
     const reforge = randomReforges();
 
     player.weaponReforge = reforge.id;
-    player.coins -= 10;
+    player.coins -= 30;
 
     const embed = new EmbedBuilder()
       .setColor("Random")

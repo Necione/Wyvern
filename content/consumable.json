@@ -1,23 +1,36 @@
 [
   {
-    "id": "mini_heal",
-    "name": "Mini Healing Potion ©",
-    "healPercent": 20,
+    "id": "lesser_heal",
+    "name": "Lesser Healing Potion ©",
+    "healPercent": 10,
     "energy": 0,
     "price": 5,
     "materials": [],
     "trader": true
   },
   {
-    "id": "medium_heal",
+    "id": "mini_heal",
     "name": "Mini Healing Potion ©",
-    "healPercent": 25,
+    "healPercent": 20,
     "energy": 0,
-    "price": 8,
+    "price": 10,
     "materials": [
       {
         "id": "slime_condensate",
         "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "medium_heal",
+    "name": "Medium Healing Potion ©",
+    "healPercent": 40,
+    "energy": 5,
+    "price": 25,
+    "materials": [
+      {
+        "id": "slime_secretions",
+        "amount": 5
       }
     ]
   },

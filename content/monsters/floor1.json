@@ -1,6 +1,6 @@
 [
   {
-    "id": "hilichurl1",
+    "id": "hilichurl",
     "name": "Hilichurl",
     "thumbnailUrl": "https://file.coffee/u/NijxJxBiDAF9-0tCGXRY_.webp",
     "floor": 1,
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "id": "anemo_slime1",
+    "id": "anemo_slime",
     "name": "Anemo Slime",
     "thumbnailUrl": "https://file.coffee/u/b_adw8hj83cozmujBCzN3.webp",
     "floor": 1,
@@ -75,7 +75,7 @@
         "id": "slime_secretions",
         "min": 1,
         "max": 2,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
         "id": "slime_concentrate",
@@ -115,7 +115,7 @@
         "id": "slime_secretions",
         "min": 1,
         "max": 2,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
         "id": "slime_concentrate",
@@ -247,7 +247,7 @@
         "id": "slime_secretions",
         "min": 1,
         "max": 2,
-        "dropChance": 0.1
+        "dropChance": 0.25
       },
       {
         "id": "slime_concentrate",
