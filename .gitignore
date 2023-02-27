@@ -1,7 +1,6 @@
 data
 dist
 node_modules
-.env
 content/settings.json
 bot.zip
 *.pdf
